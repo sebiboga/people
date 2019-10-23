@@ -30,3 +30,11 @@ function getTitle() {
 function getPhysicalOffice() {
     sendRequest('office', 'http://whoami/api/getphysicaloffice', 'PhysicalOffice');
 }
+
+function getData() {
+    getName();
+    getLocation();
+    getDepartment();
+    getTitle();
+    getPhysicalOffice();
+}
