@@ -1,0 +1,13 @@
+#body-wrapper{
+    min-height: 100vh;
+    min-width: 100vw;
+}
+#top-section{
+    height: 100px;
+    width: 100px;
+}
+#top-left{
+    background-color: #CDCDD2;
+    height: 100px;
+    width: 100px;
+}
