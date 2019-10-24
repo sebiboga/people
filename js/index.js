@@ -2,7 +2,7 @@ function sendRequest(elementId, url, prop) {
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            document.getElementById(elementId).innerHTML = JSON.parse(this.responseText)[prop];
+            document.getElementById(elementId).innerHTML += JSON.parse(this.responseText)[prop];
             // console.log(JSON.parse(this.responseText));
         }
     };
@@ -25,6 +25,13 @@ function getDepartment() {
 }
 
 function getTitle() {
+    fetch('http://people:8983/solr/skills/select?fl=features&q=mcernaianu&omitHeaders=true').then((res) => {
+        return res.json();
+    }).then((res) => {
+        let finalString = res.response.docs[0].features[0].toString() + ' ';
+        finalString = finalString[0].toUpperCase() + finalString.slice(1);
+        document.getElementById('title').innerHTML = finalString;
+    });
     sendRequest('title', 'http://whoami/api/gettitle', 'title');
 }
 
