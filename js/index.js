@@ -25,18 +25,32 @@ function getDepartment() {
 }
 
 function getTitle() {
-    fetch('http://people:8983/solr/skills/select?fl=features&q=mcernaianu&omitHeaders=true').then((res) => {
-        return res.json();
-    }).then((res) => {
-        let finalString = res.response.docs[0].features[0].toString() + ' ';
-        finalString = finalString[0].toUpperCase() + finalString.slice(1);
-        document.getElementById('title').innerHTML = finalString;
+    $(document).ready(function () {
+        $.ajax({
+            url: 'http://whoami/api/GetIdentity',
+            type: 'GET',
+            xhrFields: {
+                withCredentials: true
+            }
+        }).done(function (result) {
+            fetch(`http://people:8983/solr/skills/select?fl=features&q=${result.samaccountname}&omitHeaders=true`).then((res) => {
+                return res.json();
+            }).then((res) => {
+                let finalString = res.response.docs[0].features[0].toString() + ' ';
+                finalString = finalString[0].toUpperCase() + finalString.slice(1);
+                document.getElementById('title').innerHTML = finalString;
+            });
+            sendRequest('title', 'http://whoami/api/gettitle', 'title');
+        });
     });
-    sendRequest('title', 'http://whoami/api/gettitle', 'title');
 }
 
 function getPhysicalOffice() {
     sendRequest('office', 'http://whoami/api/getphysicaloffice', 'PhysicalOffice');
+}
+
+function getDesk() {
+    sendRequest('desk', 'http://whoami/api/getphysicaloffice', 'location');
 }
 
 function getData() {
@@ -46,6 +60,7 @@ function getData() {
     getTitle();
     getPhysicalOffice();
     getIdentity();
+    getDesk();
 }
 
 getData();
