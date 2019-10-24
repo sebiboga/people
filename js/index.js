@@ -2,8 +2,16 @@ function sendRequest(elementId, url, prop) {
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            document.getElementById(elementId).innerHTML += JSON.parse(this.responseText)[prop];
-            // console.log(JSON.parse(this.responseText));
+            const text = JSON.parse(this.responseText)[prop];
+
+            if (text === undefined) {
+                return false;
+            } else {
+                document.getElementById(elementId).innerHTML += text;
+            }
+
+
+            console.log(text);
         }
     };
     xhr.open('GET', url);
