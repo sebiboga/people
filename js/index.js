@@ -50,7 +50,7 @@ function getPhysicalOffice() {
 }
 
 function getDesk() {
-    sendRequest('desk', 'http://whoami/api/getphysicaloffice', 'location');
+    sendRequest('desk', 'http://whoami/api/getphysicaloffice', 'Location');
 }
 
 function getData() {
