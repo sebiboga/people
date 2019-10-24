@@ -1,30 +1,133 @@
+.section-title {
+    font-weight: 700;
+    color: #48545b;
+    text-transform: uppercase;
+    padding: 14px 0;
+    margin-bottom: 7px;
+    font-size: 20px;
+}
+
+.section-subtitle{
+    margin-bottom: 7px;
+    color: #999;
+    font-weight: 700;
+}
+
 body{
     margin: 0;
 }
 
 #body-wrapper{
+    font-family: 'Roboto Condensed';
+    color: #48545b;
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 14px;
     min-width: 100vw;
     max-width: 100vw;
 }
 
 #header-section{
-    height: 100px;
+    height: 80px;
     max-width: 100vw;
+}
+#header-section img {
+    margin: 21px 0 14px 0;
 }
 
 #top-section{
-    height: 100px;
-    width: 100px;
+    height: 430px;
+    width: 100%;
+    display: flex;
 }
 
 #top-left{
+    flex: 2;
     background-color: #CDCDD2;
-    height: 100px;
-    width: 100px;
+    padding: 63px 14px 0 14%;
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-end;
 }
 
-#bottom-left{
-    background-color: #f6f6f6;
-    height: 100px;
-    width: 100px;
+#user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+#user-info header {
+    font-size: 24px;
+}
+
+#title, #department {
+    margin-bottom: 7px;
+}
+
+#title {
+    color: #48545b;
+}
+
+#department {
+    color: #212529;
+}
+
+#user-info footer {
+    font-size: 20px;
+    color: #212529;
+    padding-bottom: 63px;
+}
+
+#location-section, #office {
+    margin-bottom: 7px;
+}
+
+#location-section {
+    display: flex;
+    align-items: center;
+}
+
+#location-pin {
+    width: 16px;
+    height: 24px;
+    background-image: url("../assets/pin-icon.png");
+    background-repeat: no-repeat;
+    margin-right: 3px;
+}
+
+#full-name {
+    color: #de411b;
+    font-size: 42px;
+    margin-bottom: 7px;
+}
+
+#user-img {
+    background-image: url("../assets/man-avatar.png");
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 320px;
+    align-self: flex-end;
+    margin-bottom: 7px;
+}
+
+#top-right {
+    flex: 1;
+    padding: 0 14% 28px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#summary-content {
+    width: 260px;
+    height: 260px;
+}
+
+#duration {
+    text-transform: uppercase;
+    color: #48545b;
+    font-weight: 700;
 }

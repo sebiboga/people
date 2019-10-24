@@ -1,34 +1,58 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="js/index.js"></script>
+    <script>
+        getData();
+    </script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/css-reset.css">
+
 </head>
+
 <body>
-    <div id="body-wrapper">
-        <div id="header-section">
-        </div>
-        <div id="top-section">
-            <div id="top-left">
-            </div>
-            <div id="top-right">
-            </div>
-        </div>
-        <div id="bottom-section">
-            <div id="bottom-left">
-            </div>
-            <div id="bottom-right">
-            </div>
-        </div>
-    </div>
-<script>
-    $(document).ready(getName);
-</script>
+    <header id="header-section">
+        <img src="assets/logo.png">
+    </header>
+    <main id="body-wrapper">
+        <section id="top-section">
+            <section id="top-left">
+                <div id="user-info">
+                    <header>
+                        <h1 id="full-name"></h1>
+                        <p id="title"></p>
+                        <p id="department"></p>
+                    </header>
+                    <footer>
+                        <div id="location-section">
+                            <div id="location-pin"></div>
+                            <p id="location"></p>
+                        </div>
+                        <p id="office"></p>
+                    </footer>
+                </div>
+                <div id="user-img"></div>
+            </section>
+            <section id="top-right">
+                <div id="emp-summary">
+                    <p class="section-title">summary</p>
+                    <div id="summary-content"></div>
+                </div>
+                <div class="emp-duration">
+                    <p class="section-subtitle">Employee for</p>
+                    <p id="duration">0 year(s)</p>
+                </div>
+            </section>
+        </section>
+    </main>
 </body>
+
 </html>
