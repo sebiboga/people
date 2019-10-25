@@ -38,7 +38,7 @@
 
 .section-subtitle {
     margin-bottom: 7px;
-    color: #999;
+    color: #adadad;
     font-weight: 700;
 }
 #header-section {
@@ -189,13 +189,14 @@
 /* Middle-left */
 #middle-left {
     background-color:#f6f6f6;
+    padding-bottom: 42px;
 }
-#skills-section {
+#skills-section, #education-section {
     padding-left: 14%;
     flex: 2;        
 }
 
-#skills-section .section-title {
+#skills-section, #education-section  {
     padding-top: 42px;
 }
 
