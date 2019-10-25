@@ -1,5 +1,9 @@
 *{box-sizing: border-box;}
 
+.no-display {
+    display: none;
+}
+
 .uppercase {
     text-transform: uppercase;
 }
