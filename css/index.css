@@ -199,6 +199,10 @@
 #skills-section, #education-section  {
     padding-top: 42px;
 }
+#skills-section, #projects-section  {
+    padding-top: 42px;
+    padding-left: 14%;
+}
 
 #skills-content {
     display: flex;
