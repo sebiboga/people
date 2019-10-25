@@ -195,6 +195,10 @@
     flex: 2;        
 }
 
+#skills-section .section-title {
+    padding-top: 42px;
+}
+
 #skills-content {
     display: flex;
 }
