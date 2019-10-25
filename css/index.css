@@ -1,3 +1,5 @@
+*{box-sizing: border-box;}
+
 .uppercase {
     text-transform: uppercase;
 }
@@ -15,19 +17,6 @@
     color: #999;
     font-weight: 700;
 }
-
-body {
-    margin: 0;
-}
-
-#body-wrapper {
-    font-family: 'Roboto Condensed';
-    color: #48545b;
-    line-height: 1.5;
-    font-weight: 400;
-    font-size: 14px;
-}
-
 #header-section {
     height: 80px;
 }
@@ -36,19 +25,30 @@ body {
     margin: 21px 0 14px 0;
 }
 
-#top-section {
-    height: 430px;
-    width: 100%;
+#body-wrapper {
+    font-family: 'Roboto Condensed';
+    color: #48545b;
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 14px;
     display: flex;
 }
 
-#top-left {
+#left-section {
     flex: 2;
+}
+
+#right-section {
+    flex: 1;
+}
+
+#top-left {
     background-color: #CDCDD2;
     padding: 63px 14px 0 14%;
     display: flex;
     justify-content: space-between;
     align-content: flex-end;
+    height: 430px;
 }
 
 #user-info {
@@ -58,7 +58,6 @@ body {
     height: 100%;
     line-height: 1.2;
     font-weight: 700;
-
 }
 
 #user-info header {
@@ -88,7 +87,8 @@ body {
 }
 
 #office, #desk {
-    margin-left: 19px;
+    margin-left: 21px;
+    font-size: 14px;
 }
 
 #location-section {
@@ -101,7 +101,7 @@ body {
     height: 24px;
     background-image: url("../assets/pin-icon.png");
     background-repeat: no-repeat;
-    margin-right: 3px;
+    margin-right: 5px;
 }
 
 #full-name {
@@ -116,26 +116,29 @@ body {
     width: 400px;
     height: 320px;
     align-self: flex-end;
-    margin-bottom: 7px;
 }
 
 #top-right {
-    flex: 1;
-    padding: 0 14% 28px 14px;
+    padding: 0 14% 0 14px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+#summary-container {
+    height: 252px;
+    margin-bottom: 49px;
+    color: #48545b;
+}
+
 #summary-content {
     width: 260px;
-  overflow: hidden;
-  position: relative; 
-  max-height: 252px; 
-  text-align: justify;  
-  margin-right: -1em;
-  padding-right: 1em;
-
+    overflow: hidden;
+    position: relative; 
+    max-height: 100%; 
+    text-align: justify;  
+    margin-right: -1em;
+    padding-right: 1em;
 }
 
 #summary-content:before {
@@ -157,4 +160,18 @@ body {
 #duration {
     color: #48545b;
     font-weight: 700;
+}
+
+/* Middle-left */
+#middle-left {
+    background-color:#f6f6f6;
+
+}
+
+#skills-section {
+    flex: 2;    
+    
+}
+#experience {
+    flex: 1;
 }
