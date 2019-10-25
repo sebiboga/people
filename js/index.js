@@ -36,7 +36,7 @@ function getTitle() {
                 withCredentials: true
             }
         }).done(function (result) {
-            fetch(`http://people:8983/solr/skills/select?fl=features&q=${result.samaccountname}&omitHeaders=true`).then((res) => {
+            fetch(`http://people:8983/solr/skills/select?fl=features&q=&${result.samaccountname}omitHeaders=true`).then((res) => {
                 return res.json();
             }).then((res) => {
                 let finalString = res.response.docs[0].features[0].toString() + ' ';
@@ -98,4 +98,27 @@ function getIdentity() {
     xhr.withCredentials = true;
     xhr.setRequestHeader('Content-Type', 'text/plain');
     xhr.send();
+}
+
+function getSkillsAndTools() {
+    let skills;
+    let tools;
+    $(document).ready(function () {
+        $.ajax({
+            url: 'http://whoami/api/GetIdentity',
+            type: 'GET',
+            xhrFields: {
+                withCredentials: true
+            }
+        }).done(function (result) {
+            fetch(`http://people:8983/solr/skills/select?fl=skills%2C%20tools&q=${result.samaccountname}&omitHeaders=true`).then((res) => {
+                return res.json();
+            }).then((res) => {
+                skills = res.response.docs[0].skills;
+                tools = res.response.docs[0].tools;
+
+                callFills(skills,tools);
+            });
+        });
+    });
 }
