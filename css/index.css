@@ -4,6 +4,26 @@
     text-transform: uppercase;
 }
 
+.skill {
+    font-weight: 700;
+    color: #666;
+}
+
+.secondary {
+    color: #4a90e2;
+}
+
+.border-secondary {
+    border: 1px solid #4a90e2;
+    padding: 7px 14px;
+    margin: 7px 14px 7px 0;
+}
+
+.border-primary {
+    border: 1px solid #666;
+    padding: 7px 14px;
+
+}
 .section-title {
     font-weight: 700;
     color: #48545b;
@@ -165,13 +185,32 @@
 /* Middle-left */
 #middle-left {
     background-color:#f6f6f6;
-
 }
-
 #skills-section {
-    flex: 2;    
-    
+    padding-left: 14%;
+    flex: 2;        
 }
+
+#skills-content {
+    display: flex;
+}
+
+#left-skills-content{
+    flex: 3;
+}
+
+#skills-list span, #tools-list span {
+    display: inline-block;
+}
+
+#techniques-list {
+    flex: 1;
+}
+
 #experience {
     flex: 1;
+}
+
+#tools-list p {
+    margin-top: 14px;
 }

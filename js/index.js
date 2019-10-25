@@ -64,6 +64,7 @@ function getData() {
     getPhysicalOffice();
     getIdentity();
     getDesk();
+    getSkillsAndTools();
 }
 
 getData();
