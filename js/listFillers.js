@@ -8,6 +8,8 @@ function fill(fill_list, doc_id) {
             span.className += " secondary skill uppercase border-secondary";
 
             html_elem.appendChild(span);
+            html_elem.parentNode.classList.remove("no-display");
+            html_elem.classList.remove("no-display");
         }
     }
 }
