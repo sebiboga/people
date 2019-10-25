@@ -123,24 +123,3 @@ function getSkillsAndTools() {
         });
     });
 }
-
-function getDumbData() {
-    $(document).ready(function () {
-        $.ajax({
-            url: '',
-            type: 'GET',
-            xhrFields: {
-                withCredentials: true
-            }
-        }).done(function (result) {
-            fetch(`http://people:8983/solr/skills/select?fl=skills%2C%20tools&q=${result.samaccountname}&omitHeaders=true`).then((res) => {
-                return res.json();
-            }).then((res) => {
-                skills = res.response.docs[0].skills;
-                tools = res.response.docs[0].tools;
-
-                callFills(skills,tools);
-            });
-        });
-    });
-}
