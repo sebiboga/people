@@ -36,7 +36,7 @@ function getTitle() {
                 withCredentials: true
             }
         }).done(function (result) {
-            fetch(`http://people:8983/solr/skills/select?fl=features&q=&${result.samaccountname}omitHeaders=true`).then((res) => {
+            fetch(`http://people:8983/solr/skills/select?fl=features&q=${result.samaccountname}&omitHeaders=true`).then((res) => {
                 return res.json();
             }).then((res) => {
                 let finalString = res.response.docs[0].features[0].toString() + ' ';
