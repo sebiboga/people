@@ -4,14 +4,9 @@ function sendRequest(elementId, url, prop) {
         if (this.readyState === 4 && this.status === 200) {
             const text = JSON.parse(this.responseText)[prop];
 
-            if (text === undefined) {
-                return false;
-            } else {
+            if (text !== undefined) {
                 document.getElementById(elementId).innerHTML += text;
             }
-
-
-            console.log(text);
         }
     };
     xhr.open('GET', url);
