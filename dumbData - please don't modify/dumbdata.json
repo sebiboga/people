@@ -1,0 +1,50 @@
+{
+  "response": {
+    "docs":[
+      {
+        "id": "mcernaianu",
+        "summary": "summary sgadjkshdfhsdjkfhklsdahfjkshdafkjhsdakflhsvbskldhsjkadhaskjdhklsjadhfjkshdfjkshdakf",
+        "techniques": ["tech1", "tech2"],
+        "education": [
+          {
+            "school": "school1",
+            "years": "2013-1231"
+          },
+          {
+            "school": "school2",
+            "years": "123-1233"
+          },
+          {
+            "school": "\"Babe-Bolyai\"University Cluj Napoca - Computer Science",
+            "years": "2017-2019"
+          }],
+        "certifications": [
+          "certification1",
+          "certification2",
+          "98-361: Software Development Fundamentals",
+          "Cambridge Certificate of Advanced English (CAE)"
+        ],
+        "languages": [
+          {
+            "language": "English",
+            "level": "2"
+          },
+          {
+            "language": "French",
+            "level": "1"
+          },
+          {
+            "language": "Italian",
+            "level": "3"
+          }],
+        "expertise": [
+          "Time Management",
+          "technical wirting",
+          "perfomance management",
+          "strategic planning",
+          "management leadership"
+        ]
+      }
+    ]
+  }
+}
