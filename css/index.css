@@ -247,8 +247,13 @@
     justify-content: space-between;
 }
 
+.project-info {
+    padding-bottom: 14px;
+
+}
 .li-top-left {
     position: relative;
+    padding-bottom: 7px;
 }
 
 .li-top-right {
@@ -262,4 +267,7 @@
     position: absolute;
     top: 0;
     left: -20px;
+}
+.li-bottom {
+    margin-bottom: 28px;
 }
