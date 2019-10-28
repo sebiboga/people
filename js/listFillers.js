@@ -32,7 +32,7 @@ function projects_fill(fill_list) {
     let html_elem = document.getElementById("projects-list");
 
     for (let elem of fill_list) {
-        if (fill_elem !== "") {
+        if (elem !== "") {
             let li = document.createElement("li");
             let li_wrapper = document.createElement("div");
             let li_top = document.createElement("div");

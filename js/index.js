@@ -122,7 +122,9 @@ function getSkillsAndTools() {
                 skills = res.response.docs[0].skills;
                 tools = res.response.docs[0].tools;
 
-                callFills(skills,tools);
+                list_fill(skills,'skills-list', "");
+                list_fill(tools,'tools-list', "");
+                // callFills(skills,tools);
             });
         });
     });
@@ -143,72 +145,88 @@ function getCertifications() {
             }).then((res) => {
                 certifications = res.response.docs[0].certification;
 
-                fill_secondary(certifications,"certifications-list");
+                list_fill(certifications,"certifications-list", "");
             });
         });
     });
 }
 
 function getSummary() {
-    let summary;
-    $(document).ready(function () {
-        $.ajax({
-            url: 'http://whoami/api/GetIdentity',
-            type: 'GET',
-            xhrFields: {
-                withCredentials: true
-            }
-        }).done(function (result) {
-            fetch(`http://people:8983/solr/skills/select?fl=summary&q=${result.samaccountname}&omitHeaders=true`).then((res) => {
-                return res.json();
-            }).then((res) => {
-                summary = res.response.docs[0].summary;
-
-                fill_secondary(summary,"summary-container");
-            });
-        });
+    // let summary;
+    // $(document).ready(function () {
+    //     $.ajax({
+    //         url: 'http://whoami/api/GetIdentity',
+    //         type: 'GET',
+    //         xhrFields: {
+    //             withCredentials: true
+    //         }
+    //     }).done(function (result) {
+    //         fetch(`http://people:8983/solr/skills/select?fl=summary&q=${result.samaccountname}&omitHeaders=true`).then((res) => {
+    //             return res.json();
+    //         }).then((res) => {
+    //             summary = res.response.docs[0].summary;
+    //
+    //             fill_secondary(summary,"summary-container");
+    //         });
+    //     });
+    // });
+    $.getJSON('dumbDataPleaseDontModify/dumbdata.json',(res)=>{
+        element_fill(res.response.docs[0].summary,"summary-container", "");
     });
 }
 
 function getExpertise(){
-    let expertises;
-    $(document).ready(function () {
-        $.ajax({
-            url: 'http://whoami/api/GetIdentity',
-            type: 'GET',
-            xhrFields: {
-                withCredentials: true
-            }
-        }).done(function (result) {
-            fetch(`http://people:8983/solr/skills/select?fl=expertise&q=${result.samaccountname}&omitHeaders=true`).then((res) => {
-                return res.json();
-            }).then((res) => {
-                expertises = res.response.docs[0].expertise;
-
-                //call function that fills the expertises list with the expertises
-            });
-        });
+    // let expertises;
+    // $(document).ready(function () {
+    //     $.ajax({
+    //         url: 'http://whoami/api/GetIdentity',
+    //         type: 'GET',
+    //         xhrFields: {
+    //             withCredentials: true
+    //         }
+    //     }).done(function (result) {
+    //         fetch(`http://people:8983/solr/skills/select?fl=expertise&q=${result.samaccountname}&omitHeaders=true`).then((res) => {
+    //             return res.json();
+    //         }).then((res) => {
+    //             expertises = res.response.docs[0].expertise;
+    //
+    //             //call function that fills the expertises list with the expertises
+    //         });
+    //     });
+    // });
+    $.getJSON('dumbDataPleaseDontModify/dumbdata.json',(res)=>{
+        list_fill(res.response.docs[0].expertise,"expertise-list", "");
     });
 }
 
 function getInterests(){
-    let interests;
-    $(document).ready(function () {
-        $.ajax({
-            url: 'http://whoami/api/GetIdentity',
-            type: 'GET',
-            xhrFields: {
-                withCredentials: true
-            }
-        }).done(function (result) {
-            fetch(`http://people:8983/solr/skills/select?fl=interests&q=${result.samaccountname}&omitHeaders=true`).then((res) => {
-                return res.json();
-            }).then((res) => {
-                interests = res.response.docs[0].interests;
+    // let interests;
+    // $(document).ready(function () {
+    //     $.ajax({
+    //         url: 'http://whoami/api/GetIdentity',
+    //         type: 'GET',
+    //         xhrFields: {
+    //             withCredentials: true
+    //         }
+    //     }).done(function (result) {
+    //         fetch(`http://people:8983/solr/skills/select?fl=interests&q=${result.samaccountname}&omitHeaders=true`).then((res) => {
+    //             return res.json();
+    //         }).then((res) => {
+    //             interests = res.response.docs[0].interests;
+    //
+    //             //call function that fills the interests list with the interests
+    //         });
+    //     });
+    // });
+    $.getJSON('dumbDataPleaseDontModify/dumbdata.json',(res)=>{
+        list_fill(res.response.docs[0].interests,"interest-list", "");
+    });
+}
 
-                //call function that fills the interests list with the interests
-            });
-        });
+function getEducation() {
+    //
+    $.getJSON('dumbDataPleaseDontModify/dumbdata.json',(res)=>{
+        // fill_secondary(res.response.docs[0].education,"qualifications-list");
     });
 }
 
