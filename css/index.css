@@ -227,3 +227,33 @@
 #tools-list p {
     margin-top: 14px;
 }
+
+
+/* PROJECTS */
+#projects-list {
+    padding: 0 15px;
+    color: #adadad;
+    border-left: 1px solid #4a90e2;
+}
+
+.li-top, .project-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.li-top-left {
+    position: relative;
+}
+
+.li-top-right {
+    color: #4a90e2;
+}
+
+.square {
+    width: 10px;
+    height: 10px;
+    background-color: #4a90e2;
+    position: absolute;
+    top: 0;
+    left: -20px;
+}
