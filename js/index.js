@@ -122,8 +122,8 @@ function getSkillsAndTools() {
                 skills = res.response.docs[0].skills;
                 tools = res.response.docs[0].tools;
 
-                list_fill(skills,'skills-list', "");
-                list_fill(tools,'tools-list', "");
+                list_fill(skills,'skills-list', "secondary skill uppercase border-secondary");
+                list_fill(tools,'tools-list', "secondary skill uppercase border-secondary");
                 // callFills(skills,tools);
             });
         });
@@ -195,7 +195,7 @@ function getExpertise(){
     //     });
     // });
     $.getJSON('dumbDataPleaseDontModify/dumbdata.json',(res)=>{
-        list_fill(res.response.docs[0].expertise,"expertise-list", "");
+        list_fill(res.response.docs[0].expertise,"expertise-list", "skill uppercase border-secondary");
     });
 }
 
