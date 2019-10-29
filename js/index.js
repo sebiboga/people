@@ -71,6 +71,7 @@ function getData() {
     getInterests();
     getEducation();
     getDomainKnowledge();
+    getTeckniques();
 }
 
 getData();
@@ -148,6 +149,28 @@ function getDomainKnowledge() {
                 dom=res.response.docs[0].industry;
 
                 list_fill(dom, 'domain-knowledge-list', 'primary skill uppercase display-block')
+            });
+        });
+    });
+
+}
+
+function getTeckniques() {
+    let tech;
+    $(document).ready(function () {
+        $.ajax({
+            url: 'http://whoami/api/GetIdentity',
+            type: 'GET',
+            xhrFields: {
+                withCredentials: true
+            }
+        }).done(function (result) {
+            fetch(`http://people:8983/solr/skills/select?fl=sdlc&q=${result.samaccountname}&omitHeaders=true`).then((res) => {
+                return res.json();
+            }).then((res) => {
+                tech=res.response.docs[0].sdlc;
+
+                list_fill(tech, 'techniques-list', 'primary skill uppercase display-block')
             });
         });
     });
