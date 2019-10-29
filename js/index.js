@@ -195,7 +195,7 @@ function getExpertise(){
     //     });
     // });
     $.getJSON('dumbDataPleaseDontModify/dumbdata.json',(res)=>{
-        list_fill(res.response.docs[0].expertise,"expertise-list", "skill uppercase border-secondary");
+        list_fill(res.response.docs[0].expertise,"expertise-list", "skill uppercase border-primary");
     });
 }
 

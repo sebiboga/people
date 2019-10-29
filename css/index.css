@@ -258,6 +258,7 @@
 
 .li-top-right {
     color: #4a90e2;
+    font-weight: 700;
 }
 
 .square {
@@ -270,4 +271,22 @@
 }
 .li-bottom {
     margin-bottom: 28px;
+}
+
+#areas-of-experience {
+    margin-top: 28px;
+}
+
+#expertise-list {
+    display: flex;
+    flex-direction: column;
+}
+
+#expertise-list span {
+    align-self: flex-start;
+    margin-bottom: 7px;
+}
+
+#interest-list span {
+    margin-right: 7px;
 }
