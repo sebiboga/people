@@ -58,3 +58,25 @@ function projects_fill(fill_list) {
         }
     }
 }
+
+function education_fill(fill_list, doc_id, school_class, years_class) {
+    let html_elem = document.getElementById(`${doc_id}`);
+
+    for (let elem of fill_list) {
+        if (elem !== "") {
+            let span = document.createElement("span");
+            span.innerHTML = elem.school;
+            span.className += ` ${school_class}`;
+            span.style = "display: block";
+
+            let years = document.createElement("span");
+            years.innerHTML = elem.years;
+            years.className += `${years_class}`;
+
+            html_elem.appendChild(span);
+            html_elem.appendChild(years);
+            html_elem.parentNode.classList.remove("no-display");
+            html_elem.classList.remove("no-display");
+        }
+    }
+}

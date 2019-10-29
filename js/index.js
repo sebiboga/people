@@ -69,6 +69,7 @@ function getData() {
     getSummary();
     getExpertise();
     getInterests();
+    getEducation();
 }
 
 getData();
@@ -145,7 +146,7 @@ function getCertifications() {
             }).then((res) => {
                 certifications = res.response.docs[0].certification;
 
-                list_fill(certifications,"certifications-list", "");
+                list_fill(certifications,"certifications-list", "primary skill uppercase");
             });
         });
     });
@@ -226,7 +227,7 @@ function getInterests(){
 function getEducation() {
     //
     $.getJSON('dumbDataPleaseDontModify/dumbdata.json',(res)=>{
-        // fill_secondary(res.response.docs[0].education,"qualifications-list");
+        education_fill(res.response.docs[0].education,"qualifications-list","primary skill uppercase", "");
     });
 }
 
