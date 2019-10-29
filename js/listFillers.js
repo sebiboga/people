@@ -80,3 +80,37 @@ function education_fill(fill_list, doc_id, school_class, years_class) {
         }
     }
 }
+
+function language_fill(fill_list, doc_id, language_class, level_class) {
+    let html_elem = document.getElementById(`${doc_id}`);
+    let levels = ["basic", "independent", "proficient"];
+
+
+    for (let elem of fill_list) {
+        if (elem !== "") {
+            let container = document.createElement("div");
+            let language = document.createElement("span");
+            language.innerHTML = elem.language;
+            language.className += ` ${language_class}`;
+            container.appendChild(language);
+
+            let languageLevel = elem.level;
+
+            for (let level of levels) {
+                let levelSpan = document.createElement("span");
+                levelSpan.innerText = level;
+                levelSpan.className += `${level_class}`;
+
+                container.appendChild(levelSpan);
+
+                if (level === languageLevel) {
+                    console.log(level, languageLevel);
+                    levelSpan.className += " secondary level-border-secondary";
+                }
+            }
+
+            html_elem.appendChild(container);
+            html_elem.parentNode.classList.remove("no-display");
+        }
+    }
+}

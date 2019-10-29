@@ -16,12 +16,12 @@
 
 .skill {
     font-weight: 700;
+}
+
+.primary {
     color: #666;
 }
 
-.secondary {
-    color: #4a90e2;
-}
 
 .border-secondary {
     border: 1px solid #4a90e2;
@@ -32,8 +32,8 @@
 .border-primary {
     border: 1px solid #666;
     padding: 7px 14px;
-
 }
+
 .section-title {
     font-weight: 700;
     color: #48545b;
@@ -226,8 +226,33 @@
     flex: 1;
 }
 
-#certifications-list {
+#certifications-list, #languages-section {
     margin-top: 21px;
+}
+
+#languages-list > div {
+    margin-bottom: 14px;
+}
+
+.language {
+    display: inline-block;
+    width: 70px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #424d50;
+}
+
+.level {
+    color: #adadad;
+}
+
+.level-border-primary {
+    border: 1.5px solid #adadad;
+    padding: 3px 7px;
+}
+
+.level-border-secondary {
+    border: 1.5px solid #4a90e2;
 }
 
 #experience {
@@ -306,4 +331,8 @@
 
 #interest-list span {
     margin-right: 7px;
+}
+
+.secondary {
+    color: #4a90e2;
 }

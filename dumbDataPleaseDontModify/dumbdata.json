@@ -27,15 +27,15 @@
         "languages": [
           {
             "language": "English",
-            "level": "2"
+            "level": "independent"
           },
           {
             "language": "French",
-            "level": "1"
+            "level": "basic"
           },
           {
             "language": "Italian",
-            "level": "3"
+            "level": "proficient"
           }],
         "expertise": [
           "Time Management",

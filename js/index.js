@@ -71,7 +71,8 @@ function getData() {
     getInterests();
     getEducation();
     getDomainKnowledge();
-    getTeckniques();
+    getTechniques();
+    getLanguage();
 }
 
 getData();
@@ -155,7 +156,7 @@ function getDomainKnowledge() {
 
 }
 
-function getTeckniques() {
+function getTechniques() {
     let tech;
     $(document).ready(function () {
         $.ajax({
@@ -241,7 +242,7 @@ function getExpertise(){
     //     });
     // });
     $.getJSON('dumbDataPleaseDontModify/dumbdata.json',(res)=>{
-        list_fill(res.response.docs[0].expertise,"expertise-list", "skill uppercase border-primary");
+        list_fill(res.response.docs[0].expertise,"expertise-list", "primary skill uppercase border-primary");
     });
 }
 
@@ -276,4 +277,10 @@ function getEducation() {
     });
 }
 
+function getLanguage() {
+    //
+    $.getJSON('dumbDataPleaseDontModify/dumbdata.json',(res)=>{
+        language_fill(res.response.docs[0].languages,"languages-list","language", "level level-border-primary");
+    });
+}
 
