@@ -272,7 +272,7 @@ function getInterests(){
 function getEducation() {
     //
     $.getJSON('dumbDataPleaseDontModify/dumbdata.json',(res)=>{
-        education_fill(res.response.docs[0].education,"qualifications-list","primary skill uppercase", "");
+        education_fill(res.response.docs[0].education,"qualifications-list","primary skill uppercase school-elem", "year-elem");
     });
 }
 

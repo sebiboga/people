@@ -226,6 +226,10 @@
     flex: 1;
 }
 
+#certifications-list {
+    margin-top: 21px;
+}
+
 #experience {
     flex: 1;
 }
@@ -285,6 +289,19 @@
 #expertise-list span {
     align-self: flex-start;
     margin-bottom: 7px;
+}
+
+#domain-knowledge-list {
+    margin-top: 28px;
+}
+
+.year-elem {
+    color: #adadad;
+    font-weight: 500;
+}
+
+.school-elem:not(:first-of-type) {
+    margin-top: 14px;
 }
 
 #interest-list span {
