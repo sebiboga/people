@@ -104,7 +104,6 @@ function language_fill(fill_list, doc_id, language_class, level_class) {
                 container.appendChild(levelSpan);
 
                 if (level === languageLevel) {
-                    console.log(level, languageLevel);
                     levelSpan.className += " secondary level-border-secondary";
                 }
             }
