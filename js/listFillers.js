@@ -77,10 +77,11 @@ function project_fill(fill_list, doc_id, section_class, section_items_class) {
             projectInfo.appendChild(name);
             project.appendChild(top);
             project.appendChild(projectInfo);
+            project.appendChild(activities);
             project.appendChild(skills);
             project.appendChild(tools);
             project.appendChild(industry);
-            project.appendChild(activities);
+            
 
             // add position classes, content and decoration element
             top.className += " li-top";
@@ -182,7 +183,7 @@ function project_fill(fill_list, doc_id, section_class, section_items_class) {
                 activities.appendChild(activitiesSpan);
             }
 
-            
+
             html_elem.parentNode.classList.remove("no-display");
             html_elem.appendChild(project);
         }

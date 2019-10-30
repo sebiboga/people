@@ -281,7 +281,7 @@
 
 /* PROJECTS */
 #projects-list {
-    padding: 0 35px;
+    padding: 0 35px 0 15px;
     color: #adadad;
     border-left: 1px solid #4a90e2;
 }
