@@ -3,7 +3,7 @@
     "docs":[
       {
         "id": "mcernaianu",
-        "summary": "summary sgadjkshdfhsdjkfhklsdahfjkshda fkjhsdakflhsvbskldhsjkadhaskjd hklsjadhfjkshdfjkshdakf",
+        "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "techniques": ["tech1", "tech2"],
         "education": [
           {
@@ -49,6 +49,18 @@
           "Ping-Pong",
           "Gaming",
           "Hiking"
+        ],
+        "projects": [
+          {
+            "client": "WorldPay",
+            "name": "Project name here",
+            "position": "ux designer",
+            "period": "2017 - 2018",
+            "skills": ["Git", "SourceTree"],
+            "tools": ["HTML", "CSS"],
+            "industry": ["telecommunication", "media"],
+            "activities": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
         ]
       }
     ]
