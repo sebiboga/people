@@ -29,53 +29,160 @@ function element_fill(fill_elem, doc_id, class_attributes) {
 }
 
 
-function project_fill(fill_list, doc_id, section_class) {
+function project_fill(fill_list, doc_id, section_class, section_items_class) {
     let html_elem = document.getElementById(`${doc_id}`);
 
     for (let elem of fill_list) {
         if (elem !== "") {
             let project = document.createElement("li");
 
+            // create DOM top div and children
             let top = document.createElement("div");
             let position = document.createElement("div");
             let squareDeco = document.createElement("div");
             let client = document.createElement("div");
 
+            // create DOM project-info div and children
             let projectInfo = document.createElement("div");
             let period = document.createElement("div");
             let name = document.createElement("div");
 
+            // create DOM skills div and children
             let skills = document.createElement("div");
-            let skillTitle = document.createElement("p");
-            let skillsSpan = document.createElement("span");
+            let skillsTitle = document.createElement("p");
 
+
+            // create DOM tools div and children
             let tools = document.createElement("div");
             let toolsTitle = document.createElement("p");
-            let toolsSpan = document.createElement("span");
 
+            // create DOM industry div and children
             let industry = document.createElement("div");
             let industryTitle = document.createElement("p");
-            let industrySpan = document.createElement("span");
 
+            // create DOM activities div and children
             let activities = document.createElement("div");
             let activitiesTitle = document.createElement("p");
-            let activitiesSpan = document.createElement("span");
-
-            position.appendChild(squareDeco);
-            top.appendChild(position, client);
-
-            skills.appendChild(skillTitle, skillsSpan);
-            tools.appendChild(toolsTitle, toolsSpan);
-            industry.appendChild(industryTitle, industrySpan);
-            activities.appendChild(activitiesTitle, activitiesSpan);
-
-            projectInfo.appendChild(period, name);
-            project.appendChild(top, projectInfo, skills, tools, industry, activities);
 
 
+            top.appendChild(position);
+            top.appendChild(client);
+
+            skills.appendChild(skillsTitle);
+            tools.appendChild(toolsTitle);
+            industry.appendChild(industryTitle);
+            activities.appendChild(activitiesTitle);
+
+            projectInfo.appendChild(period);
+            projectInfo.appendChild(name);
+            project.appendChild(top);
+            project.appendChild(projectInfo);
+            project.appendChild(skills);
+            project.appendChild(tools);
+            project.appendChild(industry);
+            project.appendChild(activities);
+
+            // add position classes, content and decoration element
+            top.className += " li-top";
             position.innerText = elem.position;
-            console.log(elem);
+            position.prepend(squareDeco);
+            position.className += " li-top-left skill uppercase";
+            squareDeco.className += " square";
 
+            // add client classes and content
+            client.innerText = elem.client;
+            client.className += " li-top-right";
+
+            // add project-info classes
+            projectInfo.className += " project-info";
+
+            // add period classes and content
+            period.innerText = elem.period;
+            period.className += " project-period";
+
+            // add project name classes and content
+            name.innerText = `Project: ${elem.name}`;
+            name.className += " project-name skill";
+
+
+            // add skills section classes
+            skills.className += " li-middle no-display";
+
+            // add skill title content and classes
+            skillsTitle.innerText = "Skills";
+            skillsTitle.className += ` ${section_class}`;
+
+            // add skills and classes
+            for (let skill of elem.skills) {
+                if (skill !== "") {
+                    let skillsSpan = document.createElement("span");
+
+                    skills.classList.remove("no-display");
+                    skillsSpan.innerText = skill;
+                    skillsSpan.className += ` ${section_items_class}`;
+                    skills.appendChild(skillsSpan);
+                }
+            }
+
+
+            // add tools section classes
+            tools.className += " li-middle no-display";
+
+            // add tools title content and classes
+            toolsTitle.innerText = "Tools";
+            toolsTitle.className += ` ${section_class}`;
+
+            // add tools and classes
+            for (let tool of elem.tools) {
+                if (tool !== "") {
+                    let toolsSpan = document.createElement("span");
+
+                    tools.classList.remove("no-display");
+                    toolsSpan.innerText = tool;
+                    toolsSpan.className += ` ${section_items_class}`;
+                    tools.appendChild(toolsSpan);
+                }
+            }
+
+
+            // add industry section classes
+            industry.className += " li-middle no-display";
+
+            // add industry title content and classes
+            industryTitle.innerText = "Business Industry";
+            industryTitle.className += ` ${section_class}`;
+
+            // add industry and classes
+            for (let industryField of elem.industries) {
+                if (industryField !== "") {
+                    let industrySpan = document.createElement("span");
+
+                    industry.classList.remove("no-display");
+                    industrySpan.innerText = industryField;
+                    industrySpan.className += ` ${section_items_class}`;
+                    industry.appendChild(industrySpan);
+                }
+            }
+
+
+            // add activities section classes
+            activities.className += " li-middle no-display";
+
+            // add activities title content and classes
+            activitiesTitle.innerText = "Activities";
+            activitiesTitle.className += ` ${section_class}`;
+
+            // add activities content and classes
+            if (elem.activities !== "") {
+                let activitiesSpan = document.createElement("span");
+
+                activitiesSpan.innerText = elem.activities;
+                activitiesSpan.className += " display-block margin-bottom";
+                activities.classList.remove("no-display");
+                activities.appendChild(activitiesSpan);
+            }
+
+            
             html_elem.parentNode.classList.remove("no-display");
             html_elem.appendChild(project);
         }

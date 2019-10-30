@@ -127,8 +127,8 @@ function getSkillsAndTools() {
                 skills = res.response.docs[0].skills;
                 tools = res.response.docs[0].tools;
 
-                list_fill(skills,'skills-list', "secondary skill uppercase border-secondary");
-                list_fill(tools,'tools-list', "secondary skill uppercase border-secondary");
+                list_fill(skills,'skills-list', "secondary skill uppercase border-secondary display-inline");
+                list_fill(tools,'tools-list', "secondary skill uppercase border-secondary display-inline");
                 // callFills(skills,tools);
             });
         });
@@ -270,6 +270,6 @@ function getInterests() {
 
 function getProjects() {
     $.getJSON('dumbDataPleaseDontModify/dumbdata.json',(res)=>{
-        project_fill(res.response.docs[0].projects,"projects-list");
+        project_fill(res.response.docs[0].projects,"projects-list", "section-subtitle", "primary skill uppercase border-primary-small display-inline margin-bottom");
     });
 }

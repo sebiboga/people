@@ -58,7 +58,27 @@
             "period": "2017 - 2018",
             "skills": ["Git", "SourceTree"],
             "tools": ["HTML", "CSS"],
-            "industry": ["telecommunication", "media"],
+            "industries": ["telecommunication", "media"],
+            "activities": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          },
+          {
+            "client": "WorldPay",
+            "name": "Project name here",
+            "position": "ux designer",
+            "period": "2017 - 2018",
+            "skills": ["Git", "SourceTree"],
+            "tools": ["HTML", "CSS"],
+            "industries": ["telecommunication", "media"],
+            "activities": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          },
+          {
+            "client": "WorldPay",
+            "name": "Project name here",
+            "position": "ux designer",
+            "period": "2017 - 2018",
+            "skills": ["Git", "SourceTree"],
+            "tools": ["HTML", "CSS"],
+            "industries": ["telecommunication", "media"],
             "activities": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
           }
         ]

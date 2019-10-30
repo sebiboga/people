@@ -28,6 +28,12 @@
     margin: 7px 14px 7px 0;
 }
 
+.border-primary-small {
+    border: 1px solid #666;
+    padding: 4px 7px;
+    margin: 7px 14px 7px 0;
+}
+
 .border-primary {
     border: 1px solid #666;
     padding: 7px 14px;
@@ -217,8 +223,12 @@
     flex: 3;
 }
 
-#skills-list span, #tools-list span {
+.display-inline {
     display: inline-block;
+}
+
+.margin-bottom {
+    margin-bottom: 14px;
 }
 
 #techniques-list {
@@ -283,10 +293,16 @@
 
 .project-info {
     padding-bottom: 14px;
-
 }
+
+.project-name {
+    color: #666;
+}
+
 .li-top-left {
     position: relative;
+    color: #666;
+    font-size: 18px;
     padding-bottom: 7px;
 }
 
