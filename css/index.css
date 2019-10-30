@@ -154,7 +154,7 @@
 }
 
 #top-right {
-    padding: 0 14% 0 14px;
+    padding: 0 14% 0 28px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -281,7 +281,7 @@
 
 /* PROJECTS */
 #projects-list {
-    padding: 0 15px;
+    padding: 0 35px;
     color: #adadad;
     border-left: 1px solid #4a90e2;
 }
