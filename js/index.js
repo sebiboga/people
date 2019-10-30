@@ -246,30 +246,6 @@ function getExpertise(){
     });
 }
 
-function getInterests(){
-    // let interests;
-    // $(document).ready(function () {
-    //     $.ajax({
-    //         url: 'http://whoami/api/GetIdentity',
-    //         type: 'GET',
-    //         xhrFields: {
-    //             withCredentials: true
-    //         }
-    //     }).done(function (result) {
-    //         fetch(`http://people:8983/solr/skills/select?fl=interests&q=${result.samaccountname}&omitHeaders=true`).then((res) => {
-    //             return res.json();
-    //         }).then((res) => {
-    //             interests = res.response.docs[0].interests;
-    //
-    //             //call function that fills the interests list with the interests
-    //         });
-    //     });
-    // });
-    $.getJSON('dumbDataPleaseDontModify/dumbdata.json',(res)=>{
-        list_fill(res.response.docs[0].interests,"interest-list", "");
-    });
-}
-
 function getEducation() {
     //
     $.getJSON('dumbDataPleaseDontModify/dumbdata.json',(res)=>{
@@ -281,6 +257,12 @@ function getLanguage() {
     //
     $.getJSON('dumbDataPleaseDontModify/dumbdata.json',(res)=>{
         language_fill(res.response.docs[0].languages,"languages-list","language", "level level-border-primary");
+    });
+}
+
+function getInterests() {
+    $.getJSON('dumbDataPleaseDontModify/dumbdata.json',(res)=>{
+        interests_fill(res.response.docs[0].interests,"interest-list", "interest-item");
     });
 }
 

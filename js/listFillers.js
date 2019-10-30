@@ -113,3 +113,52 @@ function language_fill(fill_list, doc_id, language_class, level_class) {
         }
     }
 }
+
+function interests_fill(fill_list, doc_id, interest_class) {
+    let icons = [
+        {
+            name: "football",
+            url: "assets/football.png"
+        },
+        {
+            name: "gaming",
+            url: "assets/gaming.png"
+        },
+        {
+            name: "ping-pong",
+            url: "assets/ping-pong.png"
+        },
+        {
+            name: "hiking",
+            url: "assets/hiking.png"
+        }
+    ];
+    let html_elem = document.getElementById(`${doc_id}`);
+
+    for (let elem of fill_list) {
+        if (elem !== "") {
+            let found = false;
+
+            for (let icon of icons) {
+                if (icon.name === elem.toLowerCase()) {
+                    let interest = document.createElement("li");
+
+                    interest.style.backgroundImage = `url(${icon.url})`;
+                    interest.className += ` ${interest_class}`;
+                    html_elem.appendChild(interest);
+                    found = true;
+                }
+            }
+
+            if (found === false) {
+                let interest = document.createElement("li");
+
+                interest.innerText = elem;
+                interest.className += ` ${interest_class}`;
+                html_elem.appendChild(interest);
+            }
+        }
+
+        html_elem.parentNode.classList.remove("no-display");
+    }
+}
