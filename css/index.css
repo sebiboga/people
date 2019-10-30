@@ -247,12 +247,18 @@
 }
 
 .level-border-primary {
-    border: 1.5px solid #adadad;
+    border: 1px solid #adadad;
+    border-right: none;
     padding: 3px 7px;
 }
 
+.level-border-primary:last-child {
+    border-right: 1px solid #adadad;
+}
+
 .level-border-secondary {
-    border: 1.5px solid #4a90e2;
+    border-top: 1px solid #4a90e2;
+    border-bottom: 1px solid #4a90e2;
 }
 
 #experience {
