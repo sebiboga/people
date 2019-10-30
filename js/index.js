@@ -73,6 +73,7 @@ function getData() {
     getDomainKnowledge();
     getTechniques();
     getLanguage();
+    getProjects();
 }
 
 getData();
@@ -266,3 +267,9 @@ function getInterests() {
     });
 }
 
+
+function getProjects() {
+    $.getJSON('dumbDataPleaseDontModify/dumbdata.json',(res)=>{
+        project_fill(res.response.docs[0].projects,"projects-list");
+    });
+}

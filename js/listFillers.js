@@ -28,33 +28,56 @@ function element_fill(fill_elem, doc_id, class_attributes) {
     }
 }
 
-function projects_fill(fill_list) {
-    let html_elem = document.getElementById("projects-list");
+
+function project_fill(fill_list, doc_id, section_class) {
+    let html_elem = document.getElementById(`${doc_id}`);
 
     for (let elem of fill_list) {
         if (elem !== "") {
-            let li = document.createElement("li");
-            let li_wrapper = document.createElement("div");
-            let li_top = document.createElement("div");
-            let li_top_left = document.createElement("div");
-            let li_top_middle = document.createElement("div");
-            let li_top_right = document.createElement("div");
-            let li_middle = document.createElement("div");
-            let li_bottom = document.createElement("div");
+            let project = document.createElement("li");
+
+            let top = document.createElement("div");
+            let position = document.createElement("div");
+            let squareDeco = document.createElement("div");
+            let client = document.createElement("div");
+
+            let projectInfo = document.createElement("div");
+            let period = document.createElement("div");
+            let name = document.createElement("div");
+
+            let skills = document.createElement("div");
+            let skillTitle = document.createElement("p");
+            let skillsSpan = document.createElement("span");
+
+            let tools = document.createElement("div");
+            let toolsTitle = document.createElement("p");
+            let toolsSpan = document.createElement("span");
+
+            let industry = document.createElement("div");
+            let industryTitle = document.createElement("p");
+            let industrySpan = document.createElement("span");
+
+            let activities = document.createElement("div");
+            let activitiesTitle = document.createElement("p");
+            let activitiesSpan = document.createElement("span");
+
+            position.appendChild(squareDeco);
+            top.appendChild(position, client);
+
+            skills.appendChild(skillTitle, skillsSpan);
+            tools.appendChild(toolsTitle, toolsSpan);
+            industry.appendChild(industryTitle, industrySpan);
+            activities.appendChild(activitiesTitle, activitiesSpan);
+
+            projectInfo.appendChild(period, name);
+            project.appendChild(top, projectInfo, skills, tools, industry, activities);
 
 
-            html_elem.appendChild(li);
+            position.innerText = elem.position;
+            console.log(elem);
+
             html_elem.parentNode.classList.remove("no-display");
-            html_elem.classList.remove("no-display");
-
-            li.appendChild(li_wrapper);
-            li_wrapper.appendChild(li_top);
-            li_wrapper.appendChild(li_middle);
-            li_wrapper.appendChild(li_bottom);
-
-            li_top.append(li_top_left);
-            li_top.append(li_top_middle);
-            li_top.append(li_top_right);
+            html_elem.appendChild(project);
         }
     }
 }
