@@ -1,6 +1,6 @@
-*{box-sizing: border-box;}
-
-
+* {
+    box-sizing: border-box;
+}
 
 .display-block {
     display: block;
@@ -21,7 +21,6 @@
 .primary {
     color: #666;
 }
-
 
 .border-secondary {
     border: 1px solid #4a90e2;
@@ -56,7 +55,7 @@
 }
 
 #body-wrapper {
-    font-family: 'Roboto Condensed';
+    font-family: 'Roboto Condensed', sans-serif;
     color: #48545b;
     line-height: 1.5;
     font-weight: 400;
