@@ -6,14 +6,15 @@
         "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "techniques": ["tech1", "tech2"],
         "education": [
-          {
-            "school": "\"Mihai Eminescu\" Highschool",
-            "years": "2013-2017"
-          },
-          {
-            "school": "\"Babes-Bolyai\"University Cluj Napoca - Computer Science",
-            "years": "2017-2019"
-          }],
+            {
+              "school": "\"Mihai Eminescu\" Highschool",
+              "years": "2013-2017"
+            },
+            {
+              "school": "\"Babes-Bolyai\"University Cluj Napoca - Computer Science",
+              "years": "2017-2019"
+            }
+        ],
         "certifications": [
           "JavaScript Algorithms",
           "Responsive Web Design",
@@ -32,7 +33,8 @@
           {
             "language": "Italian",
             "level": "proficient"
-          }],
+          }
+        ],
         "expertise": [
           "Time Management",
           "technical writing",

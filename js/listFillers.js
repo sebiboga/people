@@ -4,6 +4,7 @@ function list_fill(fill_list, doc_id, class_attributes) {
     for (let elem of fill_list) {
         if (elem !== "") {
             let span = document.createElement("span");
+
             span.innerHTML = elem;
             span.className += ` ${class_attributes}`;
 
@@ -14,20 +15,80 @@ function list_fill(fill_list, doc_id, class_attributes) {
     }
 }
 
+
 function element_fill(fill_elem, doc_id, class_attributes) {
     let html_elem = document.getElementById(`${doc_id}`);
 
     if (fill_elem !== "") {
         let span = document.createElement("span");
+
         span.innerHTML = fill_elem;
         span.className += ` ${class_attributes}`;
 
         html_elem.appendChild(span);
         html_elem.parentNode.classList.remove("no-display");
-        html_elem.classList.remove("no-display");
     }
 }
 
+
+function education_fill(fill_list, doc_id, school_class, years_class) {
+    let html_elem = document.getElementById(`${doc_id}`);
+
+    for (let elem of fill_list) {
+        if (elem !== "") {
+            let span = document.createElement("span");
+
+            span.innerHTML = elem.school;
+            span.className += ` ${school_class}`;
+
+
+            let years = document.createElement("span");
+
+            years.innerHTML = elem.years;
+            years.className += `${years_class}`;
+
+            html_elem.appendChild(span);
+            html_elem.appendChild(years);
+            html_elem.parentNode.classList.remove("no-display");
+            html_elem.classList.remove("no-display");
+        }
+    }
+}
+
+function language_fill(fill_list, doc_id, language_class, level_class) {
+    let html_elem = document.getElementById(`${doc_id}`);
+    let levels = ["basic", "independent", "proficient"];
+
+    for (let elem of fill_list) {
+        if (elem !== "") {
+            let container = document.createElement("div");
+            let language = document.createElement("span");
+
+            language.innerHTML = elem.language;
+            language.className += ` ${language_class}`;
+            container.appendChild(language);
+
+            let languageLevel = elem.level;
+
+            for (let level of levels) {
+                let levelSpan = document.createElement("span");
+
+                levelSpan.innerText = level;
+                levelSpan.className += `${level_class}`;
+
+                container.appendChild(levelSpan);
+
+                if (level === languageLevel) {
+                    levelSpan.className += " secondary level-border-secondary";
+                }
+            }
+
+            html_elem.appendChild(container);
+            html_elem.parentNode.classList.remove("no-display");
+            html_elem.classList.remove("no-display");
+        }
+    }
+}
 
 function project_fill(fill_list, doc_id, section_class, section_items_class) {
     let html_elem = document.getElementById(`${doc_id}`);
@@ -81,7 +142,7 @@ function project_fill(fill_list, doc_id, section_class, section_items_class) {
             project.appendChild(skills);
             project.appendChild(tools);
             project.appendChild(industry);
-            
+
 
             // add position classes, content and decoration element
             top.className += " li-top";
@@ -186,61 +247,6 @@ function project_fill(fill_list, doc_id, section_class, section_items_class) {
 
             html_elem.parentNode.classList.remove("no-display");
             html_elem.appendChild(project);
-        }
-    }
-}
-
-function education_fill(fill_list, doc_id, school_class, years_class) {
-    let html_elem = document.getElementById(`${doc_id}`);
-
-    for (let elem of fill_list) {
-        if (elem !== "") {
-            let span = document.createElement("span");
-            span.innerHTML = elem.school;
-            span.className += ` ${school_class}`;
-            span.style = "display: block";
-
-            let years = document.createElement("span");
-            years.innerHTML = elem.years;
-            years.className += `${years_class}`;
-
-            html_elem.appendChild(span);
-            html_elem.appendChild(years);
-            html_elem.parentNode.classList.remove("no-display");
-            html_elem.classList.remove("no-display");
-        }
-    }
-}
-
-function language_fill(fill_list, doc_id, language_class, level_class) {
-    let html_elem = document.getElementById(`${doc_id}`);
-    let levels = ["basic", "independent", "proficient"];
-
-
-    for (let elem of fill_list) {
-        if (elem !== "") {
-            let container = document.createElement("div");
-            let language = document.createElement("span");
-            language.innerHTML = elem.language;
-            language.className += ` ${language_class}`;
-            container.appendChild(language);
-
-            let languageLevel = elem.level;
-
-            for (let level of levels) {
-                let levelSpan = document.createElement("span");
-                levelSpan.innerText = level;
-                levelSpan.className += `${level_class}`;
-
-                container.appendChild(levelSpan);
-
-                if (level === languageLevel) {
-                    levelSpan.className += " secondary level-border-secondary";
-                }
-            }
-
-            html_elem.appendChild(container);
-            html_elem.parentNode.classList.remove("no-display");
         }
     }
 }

@@ -119,8 +119,8 @@ function getTechniques() {
 function getEducation() {
     // TODO get info from server when development done
     $.getJSON('dumbDataPleaseDontModify/dumbdata.json', res => {
-        education_fill(res.response.docs[0].education,'qualifications-list',
-            'primary skill uppercase school-elem', 'year-elem');
+        education_fill(res.response.docs[0].education,'education-list',
+            'primary skill uppercase school-elem display-block', 'year-elem');
     });
 }
 

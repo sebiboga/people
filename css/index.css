@@ -235,13 +235,14 @@
     flex: 1;
 }
 
-#certifications-list, #languages-section {
+#certifications-list, #languages-list {
     margin-top: 21px;
 }
 
-#languages-list > div {
+#languages-list > div, #languages-list > p {
     margin-bottom: 14px;
 }
+
 
 .language {
     display: inline-block;
