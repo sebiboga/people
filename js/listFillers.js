@@ -103,146 +103,68 @@ function project_fill(fill_list, doc_id, section_class, section_items_class) {
             let squareDeco = document.createElement("div");
             let client = document.createElement("div");
 
+            // add classes, content and decoration element to position and client
+            top.className += " li-top";
+            position.innerText = elem.position;
+            position.className += " li-top-left skill uppercase";
+            squareDeco.className += " square";
+            client.innerText = elem.client;
+            client.className += " li-top-right";
+
+            position.prepend(squareDeco);
+            top.appendChild(position);
+            top.appendChild(client);
+
+
             // create DOM project-info div and children
             let projectInfo = document.createElement("div");
             let period = document.createElement("div");
             let name = document.createElement("div");
 
-            // create DOM skills div and children
-            let skills = document.createElement("div");
-            let skillsTitle = document.createElement("p");
-
-
-            // create DOM tools div and children
-            let tools = document.createElement("div");
-            let toolsTitle = document.createElement("p");
-
-            // create DOM industry div and children
-            let industry = document.createElement("div");
-            let industryTitle = document.createElement("p");
-
-            // create DOM activities div and children
-            let activities = document.createElement("div");
-            let activitiesTitle = document.createElement("p");
-
-
-            top.appendChild(position);
-            top.appendChild(client);
-
-            skills.appendChild(skillsTitle);
-            tools.appendChild(toolsTitle);
-            industry.appendChild(industryTitle);
-            activities.appendChild(activitiesTitle);
-
-            projectInfo.appendChild(period);
-            projectInfo.appendChild(name);
-            project.appendChild(top);
-            project.appendChild(projectInfo);
-            project.appendChild(activities);
-            project.appendChild(skills);
-            project.appendChild(tools);
-            project.appendChild(industry);
-
-
-            // add position classes, content and decoration element
-            top.className += " li-top";
-            position.innerText = elem.position;
-            position.prepend(squareDeco);
-            position.className += " li-top-left skill uppercase";
-            squareDeco.className += " square";
-
-            // add client classes and content
-            client.innerText = elem.client;
-            client.className += " li-top-right";
-
-            // add project-info classes
+            // add classes to project-info
             projectInfo.className += " project-info";
 
-            // add period classes and content
+            // add classes and content to project period and name
             period.innerText = elem.period;
             period.className += " project-period";
-
-            // add project name classes and content
             name.innerText = `Project: ${elem.name}`;
             name.className += " project-name skill";
 
-
-            // add skills section classes
-            skills.className += " li-middle no-display";
-
-            // add skill title content and classes
-            skillsTitle.innerText = "Skills";
-            skillsTitle.className += ` ${section_class}`;
-
-            // add skills and classes
-            for (let skill of elem.skills) {
-                if (skill !== "") {
-                    let skillsSpan = document.createElement("span");
-
-                    skills.classList.remove("no-display");
-                    skillsSpan.innerText = skill;
-                    skillsSpan.className += ` ${section_items_class}`;
-                    skills.appendChild(skillsSpan);
-                }
-            }
+            projectInfo.appendChild(period);
+            projectInfo.appendChild(name);
 
 
-            // add tools section classes
-            tools.className += " li-middle no-display";
-
-            // add tools title content and classes
-            toolsTitle.innerText = "Tools";
-            toolsTitle.className += ` ${section_class}`;
-
-            // add tools and classes
-            for (let tool of elem.tools) {
-                if (tool !== "") {
-                    let toolsSpan = document.createElement("span");
-
-                    tools.classList.remove("no-display");
-                    toolsSpan.innerText = tool;
-                    toolsSpan.className += ` ${section_items_class}`;
-                    tools.appendChild(toolsSpan);
-                }
-            }
+            project.appendChild(top);
+            project.appendChild(projectInfo);
 
 
-            // add industry section classes
-            industry.className += " li-bottom no-display";
-
-            // add industry title content and classes
-            industryTitle.innerText = "Business Industry";
-            industryTitle.className += ` ${section_class}`;
-
-            // add industry and classes
-            for (let industryField of elem.industries) {
-                if (industryField !== "") {
-                    let industrySpan = document.createElement("span");
-
-                    industry.classList.remove("no-display");
-                    industrySpan.innerText = industryField;
-                    industrySpan.className += ` ${section_items_class}`;
-                    industry.appendChild(industrySpan);
-                }
-            }
-
-
-            // add activities section classes
-            activities.className += " li-middle no-display";
-
-            // add activities title content and classes
-            activitiesTitle.innerText = "Activities";
-            activitiesTitle.className += ` ${section_class}`;
-
-            // add activities content and classes
+            // create DOM activities, add classes and content
             if (elem.activities !== "") {
+                let activities = document.createElement("div");
+                let activitiesTitle = document.createElement("p");
                 let activitiesSpan = document.createElement("span");
 
+                activitiesTitle.innerText = "Activities";
+                activitiesTitle.className += ` ${section_class}`;
                 activitiesSpan.innerText = elem.activities;
                 activitiesSpan.className += " display-block margin-bottom";
-                activities.classList.remove("no-display");
+
+                activities.appendChild(activitiesTitle);
                 activities.appendChild(activitiesSpan);
+                project.appendChild(activities);
             }
+
+            // create DOM skills, add classes and content
+            project_section_fill(elem.skills, project, 'li-middle no-display',
+                'Skills', section_class, section_items_class);
+
+            // create DOM tools, add classes and content
+            project_section_fill(elem.tools, project, 'li-middle no-display',
+                'Tools', section_class, section_items_class);
+
+            // create DOM industry, add classes and content
+            project_section_fill(elem.industries, project, 'li-bottom no-display',
+                'Business Industry', section_class, section_items_class);
 
 
             html_elem.parentNode.classList.remove("no-display");
@@ -287,6 +209,7 @@ function interests_fill(fill_list, doc_id, interest_class) {
                 }
             }
 
+            // add text if icon not available
             if (found === false) {
                 let interest = document.createElement("li");
 
@@ -297,5 +220,31 @@ function interests_fill(fill_list, doc_id, interest_class) {
         }
 
         html_elem.parentNode.classList.remove("no-display");
+    }
+}
+
+
+
+function project_section_fill(items, parent, container_classes, title, section_class, section_items_class) {
+    if (items !== []) {
+        let div = document.createElement("div");
+        let paragraph = document.createElement("p");
+
+        div.className += ` ${container_classes}`;
+        paragraph.innerText = title;
+        paragraph.className += ` ${section_class}`;
+        div.appendChild(paragraph);
+        parent.appendChild(div);
+
+        for (let item of items) {
+            if (item !== "") {
+                let span = document.createElement("span");
+
+                div.classList.remove("no-display");
+                span.innerText = item;
+                span.className += ` ${section_items_class}`;
+                div.appendChild(span);
+            }
+        }
     }
 }

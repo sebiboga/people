@@ -280,7 +280,7 @@ function getDomainKnowledge() {
 function getInterests() {
     // TODO get info from server when development done
     $.getJSON('dumbDataPleaseDontModify/dumbdata.json', res => {
-        interests_fill(res.response.docs[0].interests,'interest-list', 'interest-item');
+        interests_fill(res.response.docs[0].interests,'interests-list', 'interest-item');
     });
 }
 
