@@ -7,20 +7,16 @@
         "techniques": ["tech1", "tech2"],
         "education": [
           {
-            "school": "school1",
-            "years": "2013-1231"
+            "school": "\"Mihai Eminescu\" Highschool",
+            "years": "2013-2017"
           },
           {
-            "school": "school2",
-            "years": "123-1233"
-          },
-          {
-            "school": "\"Babe-Bolyai\"University Cluj Napoca - Computer Science",
+            "school": "\"Babes-Bolyai\"University Cluj Napoca - Computer Science",
             "years": "2017-2019"
           }],
         "certifications": [
-          "certification1",
-          "certification2",
+          "JavaScript Algorithms",
+          "Responsive Web Design",
           "98-361: Software Development Fundamentals",
           "Cambridge Certificate of Advanced English (CAE)"
         ],
@@ -39,8 +35,8 @@
           }],
         "expertise": [
           "Time Management",
-          "technical wirting",
-          "perfomance management",
+          "technical writing",
+          "performance management",
           "strategic planning",
           "management leadership"
         ],
