@@ -208,7 +208,7 @@ function project_fill(fill_list, doc_id, section_class, section_items_class) {
 
 
             // add industry section classes
-            industry.className += " li-middle no-display";
+            industry.className += " li-bottom no-display";
 
             // add industry title content and classes
             industryTitle.innerText = "Business Industry";
