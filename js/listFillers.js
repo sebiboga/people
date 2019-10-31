@@ -1,9 +1,9 @@
 function list_fill(fill_list, doc_id, class_attributes) {
-    let html_elem = document.getElementById(`${doc_id}`);
+    const html_elem = document.getElementById(`${doc_id}`);
 
     for (let elem of fill_list) {
         if (elem !== "") {
-            let span = document.createElement("span");
+            const span = document.createElement("span");
 
             span.innerHTML = elem;
             span.className += ` ${class_attributes}`;
@@ -17,10 +17,10 @@ function list_fill(fill_list, doc_id, class_attributes) {
 
 
 function element_fill(fill_elem, doc_id, class_attributes) {
-    let html_elem = document.getElementById(`${doc_id}`);
+    const html_elem = document.getElementById(`${doc_id}`);
 
     if (fill_elem !== "") {
-        let span = document.createElement("span");
+        const span = document.createElement("span");
 
         span.innerHTML = fill_elem;
         span.className += ` ${class_attributes}`;
@@ -32,17 +32,17 @@ function element_fill(fill_elem, doc_id, class_attributes) {
 
 
 function education_fill(fill_list, doc_id, school_class, years_class) {
-    let html_elem = document.getElementById(`${doc_id}`);
+    const html_elem = document.getElementById(`${doc_id}`);
 
     for (let elem of fill_list) {
         if (elem !== "") {
-            let span = document.createElement("span");
+            const span = document.createElement("span");
 
             span.innerHTML = elem.school;
             span.className += ` ${school_class}`;
 
 
-            let years = document.createElement("span");
+            const years = document.createElement("span");
 
             years.innerHTML = elem.years;
             years.className += `${years_class}`;
@@ -56,22 +56,22 @@ function education_fill(fill_list, doc_id, school_class, years_class) {
 }
 
 function language_fill(fill_list, doc_id, language_class, level_class) {
-    let html_elem = document.getElementById(`${doc_id}`);
-    let levels = ["basic", "independent", "proficient"];
+    const html_elem = document.getElementById(`${doc_id}`);
+    const levels = ["basic", "independent", "proficient"];
 
     for (let elem of fill_list) {
         if (elem !== "") {
-            let container = document.createElement("div");
-            let language = document.createElement("span");
+            const container = document.createElement("div");
+            const language = document.createElement("span");
 
             language.innerHTML = elem.language;
             language.className += ` ${language_class}`;
             container.appendChild(language);
 
-            let languageLevel = elem.level;
+            const languageLevel = elem.level;
 
             for (let level of levels) {
-                let levelSpan = document.createElement("span");
+                const levelSpan = document.createElement("span");
 
                 levelSpan.innerText = level;
                 levelSpan.className += `${level_class}`;
@@ -91,17 +91,17 @@ function language_fill(fill_list, doc_id, language_class, level_class) {
 }
 
 function project_fill(fill_list, doc_id, section_class, section_items_class) {
-    let html_elem = document.getElementById(`${doc_id}`);
+    const html_elem = document.getElementById(`${doc_id}`);
 
     for (let elem of fill_list) {
         if (elem !== "") {
-            let project = document.createElement("li");
+            const project = document.createElement("li");
 
             // create DOM top div and children
-            let top = document.createElement("div");
-            let position = document.createElement("div");
-            let squareDeco = document.createElement("div");
-            let client = document.createElement("div");
+            const top = document.createElement("div");
+            const position = document.createElement("div");
+            const squareDeco = document.createElement("div");
+            const client = document.createElement("div");
 
             // add classes, content and decoration element to position and client
             top.className += " li-top";
@@ -117,9 +117,9 @@ function project_fill(fill_list, doc_id, section_class, section_items_class) {
 
 
             // create DOM project-info div and children
-            let projectInfo = document.createElement("div");
-            let period = document.createElement("div");
-            let name = document.createElement("div");
+            const projectInfo = document.createElement("div");
+            const period = document.createElement("div");
+            const name = document.createElement("div");
 
             // add classes to project-info
             projectInfo.className += " project-info";
@@ -140,9 +140,9 @@ function project_fill(fill_list, doc_id, section_class, section_items_class) {
 
             // create DOM activities, add classes and content
             if (elem.activities !== "") {
-                let activities = document.createElement("div");
-                let activitiesTitle = document.createElement("p");
-                let activitiesSpan = document.createElement("span");
+                const activities = document.createElement("div");
+                const activitiesTitle = document.createElement("p");
+                const activitiesSpan = document.createElement("span");
 
                 activitiesTitle.innerText = "Activities";
                 activitiesTitle.className += ` ${section_class}`;
@@ -173,8 +173,32 @@ function project_fill(fill_list, doc_id, section_class, section_items_class) {
     }
 }
 
+function project_section_fill(items, parent, container_classes, title, section_class, section_items_class) {
+    if (items !== []) {
+        const div = document.createElement("div");
+        const paragraph = document.createElement("p");
+
+        div.className += ` ${container_classes}`;
+        paragraph.innerText = title;
+        paragraph.className += ` ${section_class}`;
+        div.appendChild(paragraph);
+        parent.appendChild(div);
+
+        for (let item of items) {
+            if (item !== "") {
+                const span = document.createElement("span");
+
+                div.classList.remove("no-display");
+                span.innerText = item;
+                span.className += ` ${section_items_class}`;
+                div.appendChild(span);
+            }
+        }
+    }
+}
+
 function interests_fill(fill_list, doc_id, interest_class) {
-    let icons = [
+    const icons = [
         {
             name: "football",
             url: "assets/football.png"
@@ -192,7 +216,7 @@ function interests_fill(fill_list, doc_id, interest_class) {
             url: "assets/hiking.png"
         }
     ];
-    let html_elem = document.getElementById(`${doc_id}`);
+    const html_elem = document.getElementById(`${doc_id}`);
 
     for (let elem of fill_list) {
         if (elem !== "") {
@@ -200,7 +224,7 @@ function interests_fill(fill_list, doc_id, interest_class) {
 
             for (let icon of icons) {
                 if (icon.name === elem.toLowerCase()) {
-                    let interest = document.createElement("li");
+                    const interest = document.createElement("li");
 
                     interest.style.backgroundImage = `url(${icon.url})`;
                     interest.className += ` ${interest_class}`;
@@ -211,7 +235,7 @@ function interests_fill(fill_list, doc_id, interest_class) {
 
             // add text if icon not available
             if (found === false) {
-                let interest = document.createElement("li");
+                const interest = document.createElement("li");
 
                 interest.innerText = elem;
                 interest.className += ` ${interest_class}`;
@@ -220,31 +244,5 @@ function interests_fill(fill_list, doc_id, interest_class) {
         }
 
         html_elem.parentNode.classList.remove("no-display");
-    }
-}
-
-
-
-function project_section_fill(items, parent, container_classes, title, section_class, section_items_class) {
-    if (items !== []) {
-        let div = document.createElement("div");
-        let paragraph = document.createElement("p");
-
-        div.className += ` ${container_classes}`;
-        paragraph.innerText = title;
-        paragraph.className += ` ${section_class}`;
-        div.appendChild(paragraph);
-        parent.appendChild(div);
-
-        for (let item of items) {
-            if (item !== "") {
-                let span = document.createElement("span");
-
-                div.classList.remove("no-display");
-                span.innerText = item;
-                span.className += ` ${section_items_class}`;
-                div.appendChild(span);
-            }
-        }
     }
 }

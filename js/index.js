@@ -40,6 +40,7 @@ function getTitle() {
                 .then(res => res.json())
                 .then(res => {
                     let finalString = res.response.docs[0].features[0].toString() + ' ';
+
                     finalString = finalString[0].toUpperCase() + finalString.slice(1);
                     document.getElementById('title').innerHTML = finalString;
                 });
@@ -68,9 +69,6 @@ function getDesk() {
 
 
 function getSkillsAndTools() {
-    let skills;
-    let tools;
-
     $(document).ready(() => {
         $.ajax({
             url: 'http://whoami/api/GetIdentity',
@@ -82,19 +80,17 @@ function getSkillsAndTools() {
             fetch(`http://people:8983/solr/skills/select?fl=skills%2C%20tools&q=${result.samaccountname}&omitHeaders=true`)
                 .then(res => res.json())
                 .then(res => {
-                    skills = res.response.docs[0].skills;
-                    tools = res.response.docs[0].tools;
+                    const skills = res.response.docs[0].skills;
+                    const tools = res.response.docs[0].tools;
 
-                    list_fill(skills,'skills-list', "secondary skill uppercase border-secondary display-inline");
-                    list_fill(tools,'tools-list', "secondary skill uppercase border-secondary display-inline");
+                    list_fill(skills,'skills-list', 'secondary skill uppercase border-secondary display-inline');
+                    list_fill(tools,'tools-list', 'secondary skill uppercase border-secondary display-inline');
                 });
         });
     });
 }
 
 function getTechniques() {
-    let tech;
-
     $(document).ready(() => {
         $.ajax({
             url: 'http://whoami/api/GetIdentity',
@@ -106,9 +102,9 @@ function getTechniques() {
             fetch(`http://people:8983/solr/skills/select?fl=sdlc&q=${result.samaccountname}&omitHeaders=true`)
                 .then(res => res.json())
                 .then(res => {
-                    tech = res.response.docs[0].sdlc;
+                    const techniques = res.response.docs[0].sdlc;
 
-                    list_fill(tech, 'techniques-list', 'primary skill uppercase display-block')
+                    list_fill(techniques, 'techniques-list', 'primary skill uppercase display-block');
                 });
         });
     });
@@ -125,8 +121,6 @@ function getEducation() {
 }
 
 function getCertifications() {
-    let certifications;
-
     $(document).ready(() => {
         $.ajax({
             url: 'http://whoami/api/GetIdentity',
@@ -138,9 +132,9 @@ function getCertifications() {
             fetch(`http://people:8983/solr/skills/select?fl=certification&q=${result.samaccountname}&omitHeaders=true`)
                 .then(res => res.json())
                 .then(res => {
-                    certifications = res.response.docs[0].certification;
+                    const certifications = res.response.docs[0].certification;
 
-                    list_fill(certifications,"certifications-list", "primary skill uppercase");
+                    list_fill(certifications,'certifications-list', 'primary skill uppercase');
             });
         });
     });
@@ -197,9 +191,9 @@ function getEmployeeDuration() {
 
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            let response = this.responseText;
+            const response = this.responseText;
             let finalString = '';
-            let years = Number(JSON.parse(response)['years']);
+            const years = Number(JSON.parse(response)['years']);
 
             if (years !== 0 && years > 1) {
                 finalString += `${years} YEARS `;
@@ -207,7 +201,7 @@ function getEmployeeDuration() {
                 finalString += `${years} YEAR `;
             }
 
-            let months = Number(JSON.parse(response)['months']);
+            const months = Number(JSON.parse(response)['months']);
 
             if (months !== 0 && months > 1) {
                 finalString += `${months} MONTHS`;
@@ -254,8 +248,6 @@ function getExpertise() {
 }
 
 function getDomainKnowledge() {
-    let dom;
-
     $(document).ready(() => {
         $.ajax({
             url: 'http://whoami/api/GetIdentity',
@@ -267,9 +259,9 @@ function getDomainKnowledge() {
             fetch(`http://people:8983/solr/skills/select?fl=industry&q=${result.samaccountname}&omitHeaders=true`)
                 .then(res => res.json())
                 .then(res => {
-                    dom = res.response.docs[0].industry;
+                    const domains = res.response.docs[0].industry;
 
-                    list_fill(dom, 'domain-knowledge-list', 'primary skill uppercase display-block');
+                    list_fill(domains, 'domain-knowledge-list', 'primary skill uppercase display-block');
                 });
         });
     });
