@@ -1,123 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Endava People</title>
     <script src="js/listFillers.js"></script>
     <script src="js/index.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/css-reset.css">
 
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+
+    <title>Endava People</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/css-reset.css" rel="stylesheet">
 </head>
 
 <body>
-    <header id="header-section">
-        <img src="assets/logo.png">
-    </header>
-    <main id="body-wrapper">
-        <section id="left-section">
-            <section id="top-left">
-                <div id="user-info">
-                    <header>
-                        <h1 id="full-name"></h1>
-                        <p id="title"></p>
-                        <p id="department"></p>
-                    </header>
-                    <footer>
-                        <div id="location-section">
-                            <div id="location-pin"></div>
-                            <p id="location"></p>
+<!-- HEADER -->
+<header id="header-section">
+    <img src="assets/logo.png">
+</header>
+
+<!-- MAIN WRAPPER -->
+<main id="body-wrapper">
+
+    <!-- LEFT SECTION -->
+    <section id="left-section">
+
+        <!-- HERO SECTION -->
+        <section id="top-left">
+            <div id="user-info">
+                <header>
+                    <h1 id="full-name"></h1>
+                    <p id="title"></p>
+                    <p id="department"></p>
+                </header>
+
+                <footer>
+                    <div id="location-section">
+                        <div id="location-pin"></div>
+                        <p id="location"></p>
+                    </div>
+                    <p id="office"></p>
+                    <p id="desk"></p>
+                </footer>
+            </div>
+
+            <div id="user-img"></div>
+        </section>
+
+
+        <!-- MIDDLE LEFT -->
+        <section id="middle-left">
+
+            <!-- CORE TECHNICAL SKILLS SECTION -->
+            <section id="skills-section">
+                <p class="section-title uppercase">
+                    Core technical skills
+                </p>
+
+                <div id="skills-content">
+                    <div class="no-display" id="left-skills-content">
+                        <!-- SKILLS -->
+                        <div class="no-display" id="skills-list">
+                            <p class="section-subtitle">
+                                Skills
+                            </p>
                         </div>
-                        <p id="office"></p>
-                        <p id="desk"></p>
-                    </footer>
+
+                        <!-- TOOLS -->
+                        <div class="no-display" id="tools-list">
+                            <p class="section-subtitle">
+                                Tools
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- TECHNIQUES & METHODS -->
+                    <div class="no-display" id="techniques-list">
+                        <p class="section-subtitle">
+                            Techniques & Methods
+                        </p>
+                    </div>
                 </div>
-                <div id="user-img"></div>
             </section>
-            <!-- middle left -->
-            <section id="middle-left">
-                <section id="skills-section">
-                    <!-- CORE TECHNICAL SKILLS -->
-                    <p class="section-title uppercase">core technical skills</p>
-                    <div id="skills-content">
-                        <div id="left-skills-content" class="no-display">
-                            <div id="skills-list" class="no-display">
-                                <p class="section-subtitle">Skills</p>
-                            </div>
-                            <div id="tools-list" class="no-display">
-                                <p class="section-subtitle">Tools</p>
-                            </div>
-                        </div>
-                        <!-- Techniques & Methods -->
-                        <div id="techniques-list" class="no-display">
-                            <p class="section-subtitle">Techniques & Methods</p>
-                        </div>
-                    </div>
-                </section>
-                <!-- EDUCATION AND TRAININGS -->
-                <section id="education-section" class="no-display">
-                    <p class="section-title uppercase">education and trainings</p>
 
-                    <div id="education-list" class="no-display">
-                        <p class="section-subtitle">Qualifications</p>
-                    </div>
+            <!-- EDUCATION AND TRAININGS SECTION -->
+            <section class="no-display" id="education-section">
+                <p class="section-title uppercase">
+                    Education and trainings
+                </p>
 
-                    <div id="certifications-list" class="no-display">
-                        <p class="section-subtitle">Certifications</p>
-                    </div>
+                <!-- EDUCATION -->
+                <div class="no-display" id="education-list">
+                    <p class="section-subtitle">
+                        Qualifications
+                    </p>
+                </div>
 
-                    <div id="languages-list" class="no-display">
-                        <p class="section-subtitle">Languages</p>
-                    </div>
-                </section>
+                <!-- CERTIFICATIONS -->
+                <div class="no-display" id="certifications-list">
+                    <p class="section-subtitle">
+                        Certifications
+                    </p>
+                </div>
 
-                <!-- PROJECTS -->
-                <section id="projects-section" class="no-display">
-                    <p class="section-title uppercase">PROJECTS</p>
+                <!-- LANGUAGES -->
+                <div class="no-display" id="languages-list">
+                    <p class="section-subtitle">
+                        Languages
+                    </p>
+                </div>
+            </section>
 
-                    <ul id="projects-list">
-                    </ul>
-                </section>
+            <!-- PROJECTS SECTION -->
+            <section class="no-display" id="projects-section">
+                <p class="section-title uppercase">
+                    Projects
+                </p>
+
+                <ul id="projects-list">
+                </ul>
             </section>
         </section>
-        <section id="right-section">
-            <section id="top-right">
-                <div id="summary-section" class="no-display">
-                    <p class="section-title uppercase">summary</p>
-                    <div id="summary-container">
-                    </div>
-                </div>
-                <div>
-                    <p class="section-subtitle">Employee for</p>
-                    <p id="duration" class="uppercase"></p>
-                </div>
-                <div id="areas-of-experience" class="no-display">
-                    <p class="section-title uppercase">AREAS OF EXPERIENCE</p>
+    </section>
 
-                    <div id="expertise-list" class="no-display">
-                        <p class="section-subtitle ">Expertise</p>
-                    </div>
 
-                    <div id="domain-knowledge-list" class="no-display">
-                        <p class="section-subtitle">Domain knowledge</p>
-                    </div>
+    <!-- RIGHT SECTION -->
+    <section id="right-section">
+        <section id="top-right">
 
+            <!-- SUMMARY SECTION -->
+            <div class="no-display" id="summary-section">
+                <p class="section-title uppercase">
+                    Summary
+                </p>
+
+                <div id="summary-container">
+                </div>
+            </div>
+
+            <!-- EMPLOYEE DURATION -->
+            <div>
+                <p class="section-subtitle">
+                    Employee for
+                </p>
+
+                <p class="uppercase" id="duration"></p>
+            </div>
+
+            <!-- EXPERIENCE SECTION -->
+            <div class="no-display" id="areas-of-experience">
+                <p class="section-title uppercase">
+                    Areas of experience
+                </p>
+
+                <!-- EXPERTISE -->
+                <div class="no-display" id="expertise-list">
+                    <p class="section-subtitle ">
+                        Expertise
+                    </p>
                 </div>
 
-                <div id="interests-section" class="no-display">
-                    <p class="section-title primary uppercase">INTERESTS</p>
-                    <ul id="interest-list">
-                    </ul>
+                <!-- KNOWLEDGE -->
+                <div class="no-display" id="domain-knowledge-list">
+                    <p class="section-subtitle">
+                        Domain knowledge
+                    </p>
                 </div>
-            </section>
+
+            </div>
+
+            <!-- INTERESTS SECTION -->
+            <div class="no-display" id="interests-section">
+                <p class="section-title primary uppercase">
+                    Interests
+                </p>
+
+                <ul id="interest-list">
+                </ul>
+            </div>
         </section>
-    </main>
+    </section>
+</main>
 </body>
-
 </html>
