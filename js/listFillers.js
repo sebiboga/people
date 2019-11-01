@@ -16,21 +16,6 @@ function list_fill(fill_list, doc_id, class_attributes) {
 }
 
 
-function element_fill(fill_elem, doc_id, class_attributes) {
-    const html_elem = document.getElementById(`${doc_id}`);
-
-    if (fill_elem !== "") {
-        const span = document.createElement("span");
-
-        span.innerHTML = fill_elem;
-        span.className += ` ${class_attributes}`;
-
-        html_elem.appendChild(span);
-        html_elem.parentNode.classList.remove("no-display");
-    }
-}
-
-
 function education_fill(fill_list, doc_id, school_class, years_class) {
     const html_elem = document.getElementById(`${doc_id}`);
 
@@ -54,6 +39,7 @@ function education_fill(fill_list, doc_id, school_class, years_class) {
         }
     }
 }
+
 
 function language_fill(fill_list, doc_id, language_class, level_class) {
     const html_elem = document.getElementById(`${doc_id}`);
@@ -194,6 +180,20 @@ function project_section_fill(items, parent, container_classes, title, section_c
                 div.appendChild(span);
             }
         }
+    }
+}
+
+function summary_fill(fill_elem, doc_id, class_attributes) {
+    const html_elem = document.getElementById(`${doc_id}`);
+
+    if (fill_elem !== "") {
+        const span = document.createElement("span");
+
+        span.innerHTML = fill_elem;
+        span.className += ` ${class_attributes}`;
+
+        html_elem.appendChild(span);
+        html_elem.parentNode.classList.remove("no-display");
     }
 }
 
