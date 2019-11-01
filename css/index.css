@@ -88,7 +88,7 @@
 /* HERO SECTION */
 #top-left {
     background-color: #CDCDD2;
-    padding: 63px 14px 0 14%;
+    padding: 63px 14px 0 100px;
     display: flex;
     justify-content: space-between;
     align-content: flex-end;
@@ -150,15 +150,18 @@
 
 #full-name {
     color: #de411b;
-    font-size: 42px;
+    font-size: 40px;
     margin-bottom: 7px;
 }
 
 #user-img {
     background-image: url("../assets/man-avatar.png");
     background-repeat: no-repeat;
-    width: 400px;
-    height: 320px;
+    background-size: 100%;
+    width: 380px;
+    min-width: 380px;
+    height: 300px;
+    min-height: 300px;
     align-self: flex-end;
 }
 
@@ -170,7 +173,7 @@
 }
 
 #skills-section, #education-section, #projects-section {
-    padding: 42px 0 0 14%;
+    padding: 42px 0 0 100px;
 }
 
 #skills-section, #education-section {
@@ -309,8 +312,11 @@
 
 
 /* RIGHT SECTION */
+#right-section {
+    padding: 0 100px 0 28px;
+}
+
 #top-right {
-    padding: 0 14% 0 28px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
