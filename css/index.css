@@ -73,25 +73,30 @@
     line-height: 1.5;
     font-weight: 400;
     font-size: 14px;
+}
+
+/* TOP SECTION */
+#top-section, #middle-section {
     display: flex;
 }
 
-#left-section {
-    flex: 2;
-}
 
-#right-section {
-    flex: 1;
-}
-
-
-/* HERO SECTION */
+/* TOP LEFT */
 #top-left {
     background-color: #CDCDD2;
-    padding: 63px 14px 0 100px;
+    padding-top: 63px;
     display: flex;
     justify-content: space-between;
     align-content: flex-end;
+}
+
+
+#top-left, #middle-left {
+    flex: 2;
+    padding-left: 100px;
+}
+
+#top-left, #top-right {
     height: 430px;
 }
 
@@ -150,7 +155,7 @@
 
 #full-name {
     color: #de411b;
-    font-size: 40px;
+    font-size: 42px;
     margin-bottom: 7px;
 }
 
@@ -158,11 +163,69 @@
     background-image: url("../assets/man-avatar.png");
     background-repeat: no-repeat;
     background-size: 100%;
-    width: 380px;
     min-width: 380px;
-    height: 300px;
     min-height: 300px;
     align-self: flex-end;
+    margin-right: 14px;
+}
+
+/* TOP RIGHT */
+#top-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#top-right, #middle-right {
+    padding: 0 100px 0 28px;
+    flex: 1;
+}
+
+#top-right, #middle-right {
+    padding: 0 100px 0 28px;
+}
+
+#summary-container {
+    height: 252px;
+    margin-bottom: 49px;
+    color: #48545b;
+}
+
+#summary-content {
+    width: 260px;
+    overflow: hidden;
+    position: relative;
+    max-height: 100%;
+    text-align: justify;
+    margin-right: -1em;
+    padding-right: 1em;
+}
+
+#summary-content:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#summary-content:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: white;
+}
+
+#duration {
+    color: #48545b;
+    font-weight: 700;
+}
+
+
+#middle-section {
+    display: flex;
 }
 
 
@@ -173,11 +236,7 @@
 }
 
 #skills-section, #education-section, #projects-section {
-    padding: 42px 0 0 100px;
-}
-
-#skills-section, #education-section {
-    flex: 2;
+    padding-top: 42px;
 }
 
 
@@ -311,60 +370,9 @@
 }
 
 
-/* RIGHT SECTION */
-#right-section {
-    padding: 0 100px 0 28px;
-}
-
-#top-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-
-/* SUMMARY SECTION */
-#summary-container {
-    height: 252px;
-    margin-bottom: 49px;
-    color: #48545b;
-}
-
-#summary-content {
-    width: 260px;
-    overflow: hidden;
-    position: relative;
-    max-height: 100%;
-    text-align: justify;
-    margin-right: -1em;
-    padding-right: 1em;
-}
-
-#summary-content:before {
-    content: '...';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
-
-#summary-content:after {
-    content: '';
-    position: absolute;
-    right: 0;
-    width: 1em;
-    height: 1em;
-    margin-top: 0.2em;
-    background: white;
-}
-
-#duration {
-    color: #48545b;
-    font-weight: 700;
-}
-
-
+/* MIDDLE RIGHT */
 /* EXPERIENCE SECTION */
-#areas-of-experience, #interests-section {
+#areas-of-experience, #interests-section, #domain-knowledge-list {
     margin-top: 28px;
 }
 
@@ -378,12 +386,6 @@
 #expertise-list span {
     align-self: flex-start;
     margin-bottom: 7px;
-}
-
-
-/* KNOWLEDGE */
-#domain-knowledge-list {
-    margin-top: 28px;
 }
 
 
