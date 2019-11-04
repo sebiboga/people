@@ -113,10 +113,23 @@ function getTechniques() {
 
 
 function getEducation() {
-    // TODO get info from server when development done
-    $.getJSON('dumbDataPleaseDontModify/dumbdata.json', res => {
-        education_fill(res.response.docs[0].education,'education-list',
-            'primary skill uppercase school-elem display-block', 'year-elem');
+    $(document).ready(function () {
+        $.ajax({
+            url: 'http://whoami/api/GetIdentity',
+            type: 'GET',
+            xhrFields: {
+                withCredentials: true
+            }
+        }).done(function (result) {
+            fetch(`http://people:8983/solr/skills/select?fl=education&q=${result.samaccountname}&omitHeaders=true`).then((res) => {
+                return res.json();
+            }).then((res) => {
+                const education = res.response.docs[0].education;
+
+                education_fill(education,'education-list', 'primary skill uppercase school-elem display-block',
+                    'year-elem');
+            });
+        });
     });
 }
 

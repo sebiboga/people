@@ -22,17 +22,22 @@ function education_fill(fill_list, doc_id, school_class, years_class) {
     if (fill_list !== undefined) {
         const html_elem = document.getElementById(`${doc_id}`);
 
-        for (let elem of fill_list) {
-            if (elem !== "") {
+        for (let str of fill_list) {
+            if (str !== "") {
+                console.log(str)
                 const span = document.createElement("span");
+                const schoolStartIndex = str.indexOf("=") + 1;
+                const schoolregex = /years=/;
+                const schoolStopIndex = str.match(schoolregex).index - 2;
 
-                span.innerHTML = elem.school;
+                span.innerHTML = str.slice(schoolStartIndex, schoolStopIndex);
                 span.className += ` ${school_class}`;
 
-
                 const years = document.createElement("span");
+                const yearsStartIndex = str.lastIndexOf("=") + 1;
+                const yearsStopIndex = str.lastIndexOf("}");
 
-                years.innerHTML = elem.years;
+                years.innerHTML = str.slice(yearsStartIndex, yearsStopIndex);
                 years.className += `${years_class}`;
 
                 html_elem.appendChild(span);
