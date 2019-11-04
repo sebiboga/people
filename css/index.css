@@ -599,3 +599,109 @@
         height: 40px
     }
 }
+
+
+@media print {
+    @page {
+        margin: 0.5cm 0;
+        background-color: #f6f6f6;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    /* TOP SECTION */
+    #top-section {
+        flex-direction: column;
+    }
+
+    /* TOP LEFT */
+    #top-left {
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        padding: 42px 0 0 0;
+        height: 550px;
+    }
+
+    #user-info, #middle-left {
+        padding-left: 48px;
+    }
+
+    #user-info header {
+        font-size: 21px;
+    }
+
+    #full-name {
+        font-size: 30px;
+    }
+
+    #user-info footer {
+        padding-bottom: 42px;
+        font-size: 18px;
+    }
+
+    #user-img {
+        min-width: 300px;
+        min-height: 220px;
+        align-self: flex-start;
+        margin: 0 48px 24px 48px;
+    }
+
+    /* TOP RIGHT */
+    #top-right, #middle-right {
+        padding: 24px 48px;
+    }
+
+    /* SUMMARY SECTION */
+    #summary-container {
+        margin-bottom: 24px;
+        height: 210px;
+    }
+
+    #summary-container span {
+        width: 100%;
+    }
+
+    /* MIDDLE SECTION */
+    #middle-section {
+        flex-direction: column-reverse;
+    }
+
+    /* MIDDLE RIGHT */
+    /* EXPERIENCE SECTION */
+    #areas-of-experience {
+        margin-top: 0;
+    }
+
+    /* INTERESTS SECTION */
+    #interests-section {
+        padding-top: 24px;
+        margin: 0;
+    }
+
+    /* MIDDLE LEFT */
+    #middle-left {
+        padding: 24px 48px;
+        background-color: #fff;
+    }
+
+    /* SKILLS */
+    #skills-section {
+        padding-top: 0;
+    }
+
+    #skills-content {
+        flex-direction: column;
+    }
+
+    /* TECHNIQUES & METHODS */
+    #techniques-list p {
+        margin-top: 14px;
+    }
+
+    /* EDUCATION AND TRAININGS */
+    #education-section, #projects-section {
+        padding-top: 48px;
+    }
+}
