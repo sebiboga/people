@@ -54,15 +54,17 @@ function language_fill(fill_list, doc_id, language_class, level_class) {
             if (str !== "") {
                 const container = document.createElement("div");
                 const language = document.createElement("span");
-
                 const languageStartIndex = str.indexOf("=") + 1;
+
                 const languageStopIndex = str.indexOf(",");
 
                 language.innerHTML = str.slice(languageStartIndex, languageStopIndex);
                 language.className += ` ${language_class}`;
                 container.appendChild(language);
 
-                const languageLevel = str.level;
+                const levelStartIndex = str.lastIndexOf("=") + 1;
+                const levelStopIndex = str.lastIndexOf("}");
+                const languageLevel = str.slice(levelStartIndex, levelStopIndex);
 
                 for (let level of levels) {
                     const levelSpan = document.createElement("span");
