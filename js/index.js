@@ -141,12 +141,6 @@ function getCertifications() {
 }
 
 function getLanguages() {
-    // TODO get info from server when development done
-    // $.getJSON('dumbDataPleaseDontModify/dumbdata.json', res => {
-    //     language_fill(res.response.docs[0].languages,'languages-list','language',
-    //         'level level-border-primary');
-    // });
-
     $(document).ready(function () {
         $.ajax({
             url: 'http://whoami/api/GetIdentity',
@@ -178,11 +172,6 @@ function getProjects() {
 
 
 function getSummary() {
-    // TODO get info from server when development done
-    // $.getJSON('dumbDataPleaseDontModify/dumbdata.json', res => {
-    //     summary_fill(res.response.docs[0].summary,'summary-container');
-    // });
-
     $(document).ready(function () {
         $.ajax({
             url: 'http://whoami/api/GetIdentity',
