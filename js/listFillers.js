@@ -46,16 +46,21 @@ function language_fill(fill_list, doc_id, language_class, level_class) {
     const levels = ["basic", "independent", "proficient"];
 
     if (fill_list !== undefined) {
-        for (let elem of fill_list) {
-            if (elem !== "") {
+        for (let str of fill_list) {
+            if (str !== "") {
                 const container = document.createElement("div");
                 const language = document.createElement("span");
 
-                language.innerHTML = elem.language;
+                const languageStartIndex = str.indexOf("=") + 1;
+                const languageStopIndex = str.indexOf(",");
+
+                language.innerHTML = str.slice(languageStartIndex, languageStopIndex);
                 language.className += ` ${language_class}`;
                 container.appendChild(language);
 
-                const languageLevel = elem.level;
+                const languageStartIndex = str.lastIndexOf("=") + 1;
+                const languageStopIndex = str.lastIndexOf("}");
+                const languageLevel = str.slice(languageStartIndex, languageStopIndex);
 
                 for (let level of levels) {
                     const levelSpan = document.createElement("span");
