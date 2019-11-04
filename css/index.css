@@ -163,8 +163,8 @@
     background-image: url("../assets/man-avatar.png");
     background-repeat: no-repeat;
     background-size: 100%;
-    min-width: 380px;
-    min-height: 300px;
+    min-width: 400px;
+    min-height: 320px;
     align-self: flex-end;
     margin-right: 14px;
 }
@@ -177,12 +177,8 @@
 }
 
 #top-right, #middle-right {
-    padding: 0 100px 0 28px;
+    padding: 0 100px 28px 28px;
     flex: 1;
-}
-
-#top-right, #middle-right {
-    padding: 0 100px 0 28px;
 }
 
 #summary-container {
@@ -191,8 +187,9 @@
     color: #48545b;
 }
 
-#summary-content {
+#summary-container span {
     width: 260px;
+    display: inline-block;
     overflow: hidden;
     position: relative;
     max-height: 100%;
@@ -201,14 +198,14 @@
     padding-right: 1em;
 }
 
-#summary-content:before {
+#summary-container span:before {
     content: '...';
     position: absolute;
     right: 0;
     bottom: 0;
 }
 
-#summary-content:after {
+#summary-container span:after {
     content: '';
     position: absolute;
     right: 0;
@@ -267,6 +264,7 @@
 /* TECHNIQUES & METHODS */
 #techniques-list {
     flex: 1;
+    padding-right: 35px;
 }
 
 
@@ -393,6 +391,211 @@
 .interest-item {
     width: 50px;
     height: 50px;
+    background-size: 100%;
     display: inline-block;
-    margin-right: 14px;
+    margin: 0 14px 14px 0;
+}
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1439px) {
+    /* TOP LEFT */
+    #user-img {
+        min-width: 380px;
+        min-height: 300px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    #user-info header {
+        font-size: 20px;
+    }
+
+    #full-name {
+        font-size: 35px;
+    }
+
+    #user-info footer {
+        font-size: 18px;
+    }
+
+    #top-left, #middle-left {
+        padding-left: 50px;
+    }
+
+    #top-right, #middle-right {
+        padding-right: 50px;
+    }
+}
+
+
+@media screen and (max-width: 1199px) {
+    /* TOP SECTION */
+    #top-section {
+        flex-direction: column;
+    }
+
+    /* TOP LEFT */
+    #user-img {
+        margin-right: 48px;
+    }
+
+    /* TOP RIGHT */
+    #top-right, #middle-right {
+        background-color: #f6f6f6;
+        padding: 24px 48px;
+    }
+
+    /* SUMMARY SECTION */
+    #summary-container {
+        margin-bottom: 24px;
+    }
+
+    #summary-container span {
+        width: 70%;
+    }
+
+    #summary-container span:after {
+        background: #f6f6f6;
+    }
+
+    /* MIDDLE SECTION */
+    #middle-section {
+        flex-direction: column-reverse;
+    }
+
+    /* MIDDLE RIGHT */
+    /* EXPERIENCE SECTION */
+    #areas-of-experience {
+        margin-top: 0;
+    }
+
+    /* INTERESTS SECTION */
+    #interests-section {
+        padding-top: 48px;
+        margin: 0;
+    }
+
+    /* MIDDLE LEFT */
+    #middle-left {
+        padding: 24px 48px;
+    }
+
+    /* SKILLS */
+    #skills-section {
+        padding-top: 0;
+    }
+
+    /* EDUCATION AND TRAININGS */
+    #education-section, #projects-section {
+        padding-top: 48px;
+    }
+}
+
+
+@media screen and (max-width: 899px) {
+    /* TOP LEFT */
+    #top-left {
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        padding: 42px 0 0 0;
+        height: 650px;
+    }
+
+    #user-info, #middle-left {
+        padding-left: 48px;
+    }
+
+    #user-info header {
+        font-size: 21px;
+    }
+
+    #full-name {
+        font-size: 30px;
+    }
+
+    #user-info footer {
+        padding-bottom: 42px;
+        font-size: 18px;
+    }
+
+    #user-img {
+        align-self: flex-start;
+        margin: 0 48px 24px 48px;
+    }
+
+    /* CORE TECHNICAL SKILLS SECTION */
+    /* SKILLS */
+    #skills-content {
+        flex-direction: column;
+    }
+
+    /* TECHNIQUES & METHODS */
+    #techniques-list p {
+        margin-top: 14px;
+    }
+
+    /* PROJECTS */
+    #projects-list {
+        padding-right: 0;
+    }
+
+    .li-top {
+        flex-direction: column;
+    }
+
+    .project-info {
+        flex-direction: column-reverse;
+    }
+
+    .li-top-right, .project-name {
+        margin-bottom: 7px;
+    }
+}
+
+
+@media screen and (max-width: 599px) {
+    .section-title {
+        padding: 7px 0;
+    }
+
+    /* TOP SECTION */
+    /* TOP LEFT */
+    #top-left {
+        height: 550px;
+    }
+
+    #user-info, #middle-left {
+        padding-left: 24px;
+    }
+
+    #user-img {
+        min-width: 300px;
+        min-height: 220px;
+        align-self: center;
+    }
+
+    /* TOP RIGHT */
+    #top-right, #middle-right {
+        padding: 24px;
+    }
+
+    /* SUMMARY SECTION */
+    #summary-container span {
+        width: 100%;
+    }
+
+    /* MIDDLE LEFT */
+    #middle-left {
+        padding: 24px;
+    }
+
+    /* MIDDLE RIGHT */
+    /* INTERESTS SECTION */
+    .interest-item {
+        width: 40px;
+        height: 40px
+    }
 }

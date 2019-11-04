@@ -162,7 +162,7 @@ function getProjects() {
 function getSummary() {
     // TODO get info from server when development done
     $.getJSON('dumbDataPleaseDontModify/dumbdata.json', res => {
-        summary_fill(res.response.docs[0].summary,'summary-container', '');
+        summary_fill(res.response.docs[0].summary,'summary-container');
     });
 
 

@@ -183,14 +183,13 @@ function project_section_fill(items, parent, container_classes, title, section_c
     }
 }
 
-function summary_fill(fill_elem, doc_id, class_attributes) {
+function summary_fill(fill_elem, doc_id) {
     const html_elem = document.getElementById(`${doc_id}`);
 
     if (fill_elem !== "") {
         const span = document.createElement("span");
 
         span.innerHTML = fill_elem;
-        span.className += ` ${class_attributes}`;
 
         html_elem.appendChild(span);
         html_elem.parentNode.classList.remove("no-display");
