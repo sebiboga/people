@@ -142,9 +142,27 @@ function getCertifications() {
 
 function getLanguages() {
     // TODO get info from server when development done
-    $.getJSON('dumbDataPleaseDontModify/dumbdata.json', res => {
-        language_fill(res.response.docs[0].languages,'languages-list','language',
-            'level level-border-primary');
+    // $.getJSON('dumbDataPleaseDontModify/dumbdata.json', res => {
+    //     language_fill(res.response.docs[0].languages,'languages-list','language',
+    //         'level level-border-primary');
+    // });
+
+    $(document).ready(function () {
+        $.ajax({
+            url: 'http://whoami/api/GetIdentity',
+            type: 'GET',
+            xhrFields: {
+                withCredentials: true
+            }
+        }).done(function (result) {
+            fetch(`http://people:8983/solr/skills/select?fl=language&q=${result.samaccountname}&omitHeaders=true`).then((res) => {
+                return res.json();
+            }).then((res) => {
+                const languages = res.response.docs[0].language;
+
+                language_fill(languages,'languages-list','language', 'level level-border-primary');
+            });
+        });
     });
 }
 
@@ -161,29 +179,27 @@ function getProjects() {
 
 function getSummary() {
     // TODO get info from server when development done
-    $.getJSON('dumbDataPleaseDontModify/dumbdata.json', res => {
-        summary_fill(res.response.docs[0].summary,'summary-container');
-    });
-
-
-    // let summary;
-    // $(document).ready(function () {
-    //     $.ajax({
-    //         url: 'http://whoami/api/GetIdentity',
-    //         type: 'GET',
-    //         xhrFields: {
-    //             withCredentials: true
-    //         }
-    //     }).done(function (result) {
-    //         fetch(`http://people:8983/solr/skills/select?fl=summary&q=${result.samaccountname}&omitHeaders=true`).then((res) => {
-    //             return res.json();
-    //         }).then((res) => {
-    //             summary = res.response.docs[0].summary;
-    //
-    //             fill_secondary(summary,"summary-container");
-    //         });
-    //     });
+    // $.getJSON('dumbDataPleaseDontModify/dumbdata.json', res => {
+    //     summary_fill(res.response.docs[0].summary,'summary-container');
     // });
+
+    $(document).ready(function () {
+        $.ajax({
+            url: 'http://whoami/api/GetIdentity',
+            type: 'GET',
+            xhrFields: {
+                withCredentials: true
+            }
+        }).done(function (result) {
+            fetch(`http://people:8983/solr/skills/select?fl=summary_t&q=${result.samaccountname}&omitHeaders=true`).then((res) => {
+                return res.json();
+            }).then((res) => {
+                const summary = res.response.docs[0].summary;
+
+                summary_fill(summary,'summary-container');
+            });
+        });
+    });
 }
 
 function getEmployeeDuration() {

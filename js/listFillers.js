@@ -45,33 +45,35 @@ function language_fill(fill_list, doc_id, language_class, level_class) {
     const html_elem = document.getElementById(`${doc_id}`);
     const levels = ["basic", "independent", "proficient"];
 
-    for (let elem of fill_list) {
-        if (elem !== "") {
-            const container = document.createElement("div");
-            const language = document.createElement("span");
+    if (fill_list !== undefined) {
+        for (let elem of fill_list) {
+            if (elem !== "") {
+                const container = document.createElement("div");
+                const language = document.createElement("span");
 
-            language.innerHTML = elem.language;
-            language.className += ` ${language_class}`;
-            container.appendChild(language);
+                language.innerHTML = elem.language;
+                language.className += ` ${language_class}`;
+                container.appendChild(language);
 
-            const languageLevel = elem.level;
+                const languageLevel = elem.level;
 
-            for (let level of levels) {
-                const levelSpan = document.createElement("span");
+                for (let level of levels) {
+                    const levelSpan = document.createElement("span");
 
-                levelSpan.innerText = level;
-                levelSpan.className += `${level_class}`;
+                    levelSpan.innerText = level;
+                    levelSpan.className += `${level_class}`;
 
-                container.appendChild(levelSpan);
+                    container.appendChild(levelSpan);
 
-                if (level === languageLevel) {
-                    levelSpan.className += " secondary level-border-secondary";
+                    if (level === languageLevel) {
+                        levelSpan.className += " secondary level-border-secondary";
+                    }
                 }
-            }
 
-            html_elem.appendChild(container);
-            html_elem.parentNode.classList.remove("no-display");
-            html_elem.classList.remove("no-display");
+                html_elem.appendChild(container);
+                html_elem.parentNode.classList.remove("no-display");
+                html_elem.classList.remove("no-display");
+            }
         }
     }
 }
@@ -186,13 +188,15 @@ function project_section_fill(items, parent, container_classes, title, section_c
 function summary_fill(fill_elem, doc_id) {
     const html_elem = document.getElementById(`${doc_id}`);
 
-    if (fill_elem !== "") {
-        const span = document.createElement("span");
+    if (fill_elem !== undefined) {
+        if (fill_elem !== "") {
+            const span = document.createElement("span");
 
-        span.innerHTML = fill_elem;
+            span.innerHTML = fill_elem;
 
-        html_elem.appendChild(span);
-        html_elem.parentNode.classList.remove("no-display");
+            html_elem.appendChild(span);
+            html_elem.parentNode.classList.remove("no-display");
+        }
     }
 }
 
