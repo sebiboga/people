@@ -24,11 +24,10 @@ function education_fill(fill_list, doc_id, school_class, years_class) {
 
         for (let str of fill_list) {
             if (str !== "") {
-                console.log(str)
                 const span = document.createElement("span");
                 const schoolStartIndex = str.indexOf("=") + 1;
-                const schoolregex = /years=/;
-                const schoolStopIndex = str.match(schoolregex).index - 2;
+                const schoolRegex = /years=/;
+                const schoolStopIndex = str.match(schoolRegex).index - 2;
 
                 span.innerHTML = str.slice(schoolStartIndex, schoolStopIndex);
                 span.className += ` ${school_class}`;
