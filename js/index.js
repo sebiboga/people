@@ -194,7 +194,7 @@ function getSummary() {
             fetch(`http://people:8983/solr/skills/select?fl=summary_t&q=${result.samaccountname}&omitHeaders=true`).then((res) => {
                 return res.json();
             }).then((res) => {
-                const summary = res.response.docs[0].summary;
+                const summary = res.response.docs[0].summary_t;
 
                 summary_fill(summary,'summary-container');
             });
