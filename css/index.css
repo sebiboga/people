@@ -177,12 +177,12 @@
     border-radius: 50%;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
 }
 
 #user-img-transparent {
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     min-width: 400px;
     min-height: 320px;
     align-self: flex-end;
