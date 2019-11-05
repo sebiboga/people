@@ -159,8 +159,28 @@
     margin-bottom: 7px;
 }
 
+#img-container {
+    min-width: 320px;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    margin: 0 14px 14px 0;
+    border-radius: 50%;
+    border: 14px solid #48545b;
+}
+
 #user-img {
-    background-image: url("../assets/man-avatar.png");
+    min-width: 275px;
+    min-height: 275px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+#user-img-transparent {
     background-repeat: no-repeat;
     background-size: 100%;
     min-width: 400px;

@@ -1,6 +1,6 @@
 @media screen and (max-width: 1439px) {
     /* TOP LEFT */
-    #user-img {
+    #user-img-transparent {
         min-width: 380px;
         min-height: 300px;
     }
@@ -39,7 +39,7 @@
 
 
     /* TOP LEFT */
-    #user-img {
+    #user-img-transparent, #img-container {
         margin-right: 48px;
     }
 
@@ -130,7 +130,7 @@
         font-size: 18px;
     }
 
-    #user-img {
+    #user-img-transparent, #img-container {
         align-self: flex-start;
         margin: 0 48px 24px 48px;
     }
@@ -184,10 +184,21 @@
         padding-left: 24px;
     }
 
-    #user-img {
+    #user-img-transparent {
         min-width: 300px;
         min-height: 220px;
         align-self: center;
+    }
+
+    #img-container {
+        min-width: 270px;
+        min-height: 270px;
+        border-width: 10px;
+    }
+
+    #user-img {
+        min-width: 240px;
+        min-height: 240px;
     }
 
 

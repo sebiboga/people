@@ -18,6 +18,28 @@ function list_fill(fill_list, doc_id, class_attributes) {
 }
 
 
+function img_fill(user_obj, img_id, img_transparent_id) {
+    const imgUrl = user_obj.profile_s;
+    const imgTransparentUrl = user_obj.profile_t;
+    const img_elem = document.getElementById(`${img_id}`);
+    const imgTransparent_elem = document.getElementById(`${img_transparent_id}`);
+
+    if (imgTransparentUrl) {
+        img_elem.parentNode.classList.add("no-display");
+        imgTransparent_elem.classList.remove("no-display");
+
+        imgTransparent_elem.style.backgroundImage = `url(${imgTransparentUrl})`;
+    }
+
+    if (imgUrl) {
+        imgTransparent_elem.classList.add("no-display");
+        img_elem.parentNode.classList.remove("no-display");
+
+        img_elem.style.backgroundImage = `url(${imgUrl})`;
+    }
+}
+
+
 function education_fill(fill_list, doc_id, school_class, years_class) {
     if (fill_list !== undefined) {
         const html_elem = document.getElementById(`${doc_id}`);

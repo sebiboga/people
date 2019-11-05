@@ -40,7 +40,7 @@
         font-size: 18px;
     }
 
-    #user-img {
+    #user-img-transparent {
         min-width: 300px;
         min-height: 220px;
         align-self: flex-start;

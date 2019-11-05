@@ -54,6 +54,8 @@ function getProfessionalInfo() {
             fetch(`http://people:8983/solr/skills/select?q=${result.samaccountname}`)
                 .then(res => res.json())
                 .then(res => {
+                    img_fill(res.response.docs[0], 'user-img', 'user-img-transparent');
+
                     list_fill(res.response.docs[0].skills,'skills-list',
                         'secondary skill uppercase border-secondary display-inline');
 
