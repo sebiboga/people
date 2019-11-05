@@ -8,7 +8,7 @@
 }
 
 .no-display {
-    display: none;
+    display: none !important;
 }
 
 .uppercase {
@@ -51,6 +51,7 @@
 .section-subtitle {
     margin-bottom: 7px;
     color: #adadad;
+    font-size: 16px;
     font-weight: 700;
 }
 

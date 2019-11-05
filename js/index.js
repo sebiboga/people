@@ -5,7 +5,6 @@ function getData() {
     getProfessionalInfo();
     getProjects();
     getEmployeeDuration();
-    getExpertise();
     getInterests();
 }
 
@@ -75,6 +74,9 @@ function getProfessionalInfo() {
 
                     summary_fill(res.response.docs[0].summary_t,'summary-container');
 
+                    list_fill(res.response.docs[0].expertise,'expertise-list',
+                        'primary skill uppercase border-primary');
+
                     list_fill(res.response.docs[0].industry, 'domain-knowledge-list',
                         'primary skill uppercase display-block');
                 });
@@ -123,26 +125,6 @@ function getEmployeeDuration() {
     xhr.setRequestHeader('Content-Type', 'text/plain');
     xhr.send();
 }
-
-
-function getExpertise() {
-    // TODO get info from server when development done
-    $.getJSON('dumbDataPleaseDontModify/dumbdata.json', res => {
-        list_fill(res.response.docs[0].expertise,'expertise-list',
-            'primary skill uppercase border-primary');
-    });
-
-    // $(document).ready(() => {
-    //     $.ajax(identitySettings).done(result => {
-    //         fetch(`http://people:8983/solr/skills/select?fl=expertise&q=${result.samaccountname}&omitHeaders=true`)
-    //             .then(res => res.json())
-    //             .then(res => {
-    //               list_fill(res.response.docs[0].expertise,'expertise-list', 'primary skill uppercase border-primary');
-    //         });
-    //     });
-    // });
-}
-
 
 function getInterests() {
     // TODO get info from server when development done
