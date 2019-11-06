@@ -57,7 +57,7 @@ function getProfessionalInfo() {
                         'primary skill uppercase school-elem display-block', 'year-elem');
 
                     list_fill(res.response.docs[0].certification, 'certifications-list',
-                        'primary skill uppercase');
+                        'primary skill uppercase display-block');
 
                     language_fill(res.response.docs[0].language, 'languages-list', 'language',
                         'level level-border-primary');
