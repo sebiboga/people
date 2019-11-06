@@ -21,13 +21,7 @@ function getPersonalInfo() {
 
 function getTitle() {
     $(document).ready(() => {
-        $.ajax({
-            url: 'http://whoami/api/GetIdentity',
-            type: 'GET',
-            xhrFields: {
-                withCredentials: true
-            }
-        }).done(result => {
+        $.ajax(identitySettings).done(result => {
             fetch(`http://people:8983/solr/skills/select?fl=features&q=${result.samaccountname}&omitHeaders=true`)
                 .then(res => res.json())
                 .then(res => {
@@ -44,39 +38,33 @@ function getTitle() {
 
 function getProfessionalInfo() {
     $(document).ready(() => {
-        $.ajax({
-            url: 'http://whoami/api/GetIdentity',
-            type: 'GET',
-            xhrFields: {
-                withCredentials: true
-            }
-        }).done(result => {
+        $.ajax(identitySettings).done(result => {
             fetch(`http://people:8983/solr/skills/select?q=${result.samaccountname}`)
                 .then(res => res.json())
                 .then(res => {
                     img_fill(res.response.docs[0], 'user-img', 'user-img-transparent');
 
-                    list_fill(res.response.docs[0].skills,'skills-list',
+                    list_fill(res.response.docs[0].skills, 'skills-list',
                         'secondary skill uppercase border-secondary display-inline');
 
-                    list_fill(res.response.docs[0].tools,'tools-list',
+                    list_fill(res.response.docs[0].tools, 'tools-list',
                         'secondary skill uppercase border-secondary display-inline');
 
                     list_fill(res.response.docs[0].sdlc, 'techniques-list',
                         'primary skill uppercase display-block');
 
-                    education_fill(res.response.docs[0].education,'education-list',
+                    education_fill(res.response.docs[0].education, 'education-list',
                         'primary skill uppercase school-elem display-block', 'year-elem');
 
-                    list_fill(res.response.docs[0].certification,'certifications-list',
+                    list_fill(res.response.docs[0].certification, 'certifications-list',
                         'primary skill uppercase');
 
-                    language_fill(res.response.docs[0].language,'languages-list','language',
+                    language_fill(res.response.docs[0].language, 'languages-list', 'language',
                         'level level-border-primary');
 
-                    summary_fill(res.response.docs[0].summary_t,'summary-container');
+                    summary_fill(res.response.docs[0].summary_t, 'summary-container');
 
-                    list_fill(res.response.docs[0].expertise,'expertise-list',
+                    list_fill(res.response.docs[0].expertise, 'expertise-list',
                         'primary skill uppercase border-primary');
 
                     list_fill(res.response.docs[0].industry, 'domain-knowledge-list',
@@ -87,10 +75,15 @@ function getProfessionalInfo() {
 }
 
 function getProjects() {
-    // TODO get info from server when development done
-    $.getJSON('dumbDataPleaseDontModify/dumbdata.json', res => {
-        project_fill(res.response.docs[0].projects,'projects-list', 'section-subtitle',
-            'primary skill uppercase border-primary-small display-inline margin-bottom');
+    $(document).ready(() => {
+        $.ajax(identitySettings).done(result => {
+            fetch(`http://skills:8983/solr/projects/select?q=${result.samaccountname}`)
+                .then(res => res.json())
+                .then(res => {
+                    project_fill(res.response.docs, 'projects-list', 'section-subtitle',
+                        'primary skill uppercase border-primary-small display-inline margin-bottom');
+                });
+        });
     });
 }
 
@@ -131,7 +124,7 @@ function getEmployeeDuration() {
 function getInterests() {
     // TODO get info from server when development done
     $.getJSON('dumbDataPleaseDontModify/dumbdata.json', res => {
-        interests_fill(res.response.docs[0].interests,'interests-list', 'interest-item');
+        interests_fill(res.response.docs[0].interests, 'interests-list', 'interest-item');
     });
 }
 
@@ -154,3 +147,11 @@ function sendRequest(elementId, url, prop) {
     xhr.setRequestHeader('Content-Type', 'text/plain');
     xhr.send();
 }
+
+const identitySettings = {
+    url: 'http://whoami/api/GetIdentity',
+    type: 'GET',
+    xhrFields: {
+        withCredentials: true
+    }
+};
